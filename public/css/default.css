@@ -1,0 +1,33 @@
+/* 
+    Nesse arquivo vai ter alguns resetes, 
+    mas também tera variaveis de cor, fonte, etc.
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --verde-claro: #81BA5E;
+    --verde-escuro: #2C7400;
+    --cinza: #D9D9D9;
+    --branco: #FFFFFF;
+    --preto: #000000;
+
+    --font-poppins: 'Poppins', sans-serif;
+    --font-poppins: 'Roboto', sans-serif;
+}
+
+.container {
+    margin: 0 1.5rem;
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
