@@ -21,8 +21,46 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
 </head>
 <body>
-    <footer>
-        <div class="container footer">
+    <header id="header">
+        <nav class="container">
+            <div class="header_menu">
+                <div>
+                    <a href="#" class="menu_logo">
+                        <img src="./public/image/logo.svg" alt="logo do Ifruits">
+                    </a>
+                </div>
+    
+                <div class="menu_icones">
+                    <ul>
+                        <li>
+                            <i class="fa-solid fa-user"></i>
+                        </li>
+    
+                        <li>
+                            <i class="fa-solid fa-cart-shopping"></i>
+                        </li>
+    
+                        <li>
+                            <i class="fa-solid fa-bars"></i>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div>
+                <form>
+                    <div class="input_procurar">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <input type="text" placeholder="Pesquise aqui">
+                    </div>
+                </form>
+            </div>
+        </nav>
+    </header>
+
+
+    <footer id="footer">
+        <div class="container">
             <p>&#169; 2022 Tomatinho da vovó, Inc. All rights reserved</p>
     
             <ul>
@@ -46,45 +84,5 @@
             </ul>
         </div>
     </footer>
-    
-     
-    <nav class="menuFixo">
-        <ul>
-            <li>
-                <a href="#">
-                    <i class="fa-solid fa-house"></i>
-                    Inicio
-                </a>
-            </li>
-
-            <li>
-                <i class="fa-solid fa-bars"></i>
-                Menu
-                
-                <!--                 
-                <ul>
-                    <li>item</li>
-                    <li>item</li>
-                    <li>item</li>
-                    <li>item</li>
-                    <li>item</li>
-                </ul> -->
-            </li>
-      
-            <li>
-                <a href="#">
-                    <i class="fa-solid fa-cart-shopping"></i>
-                    Carrinho
-                </a>
-            </li>
-
-            <li>
-                <a href="#">
-                    <i class="fa-solid fa-user"></i>
-                    Conta
-                </a>
-            </li>
-        </ul>
-    </nav>
 </body>
 </html>
