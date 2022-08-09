@@ -1,0 +1,60 @@
+#header {
+    background-color: var(--verde-claro);
+    color: var(--branco);
+    padding: 16px 0;
+}
+
+#header .container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.header_menu {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.menu_icones ul {
+    font-size: 1.25rem;
+
+    display: inline-flex;
+    gap: 12px;
+}
+
+.input_procurar {
+    background-color: var(--branco);
+    padding: 4px 4px 4px 12px;
+    border-radius: 1rem;
+}
+
+.input_procurar i {
+    color: var(--preto);
+    border-right: 1px solid var(--preto);
+    padding-right: 6px;
+
+    font-size: 0.8rem;
+}
+
+.input_procurar input {
+    width: calc(100% - 2rem);
+    height: auto;
+    border: none;
+    outline: none;
+
+    font-family: var(--font-poppins);
+    font-weight: 400;
+    letter-spacing: 1px;
+}
+
+.input_procurar input::placeholder {
+    font-family: var(--font-poppins);
+    font-weight: 500;
+}
+
+@media (min-width: 500px) {
+    .menu_logo img {
+        width: 140%;
+    }
+}

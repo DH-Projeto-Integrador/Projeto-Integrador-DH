@@ -17,11 +17,18 @@
     --preto: #000000;
 
     --font-poppins: 'Poppins', sans-serif;
-    --font-poppins: 'Roboto', sans-serif;
+    --font-roboto: 'Roboto', sans-serif;
 }
 
 .container {
     margin: 0 1.5rem;
+}
+
+@media (min-width: 1200px) {
+    .container {
+        margin: 0 auto;
+        max-width: 1200px;
+    }
 }
 
 a {
@@ -30,4 +37,9 @@ a {
 
 li {
     list-style: none;
+}
+
+img {
+    width: 100%;
+    height: auto;
 }

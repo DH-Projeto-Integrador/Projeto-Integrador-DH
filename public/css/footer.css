@@ -1,4 +1,4 @@
-footer {
+#footer {
     background-color: var(--verde-escuro);
     color: var(--branco);
 
@@ -7,7 +7,7 @@ footer {
     font-weight: 400;
 }
 
-.footer {
+#footer .container {
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -17,11 +17,11 @@ footer {
     padding: 16px 0;
 }
 
-.footer p {
+#footer .container p {
     margin-bottom: 14px;
 }
 
-.footer ul {
+#footer .container ul {
     display: inline-flex;
     gap: 16px;
 }
