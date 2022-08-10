@@ -15,9 +15,14 @@
     --cinza: #D9D9D9;
     --branco: #FFFFFF;
     --preto: #000000;
+    --vermelho: #FF0A0A;
 
     --font-poppins: 'Poppins', sans-serif;
     --font-roboto: 'Roboto', sans-serif;
+}
+
+body {
+    background-color: #F0FBF3;
 }
 
 .container {
