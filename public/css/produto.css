@@ -1,0 +1,106 @@
+body {
+    height: auto;
+    max-width: 527px;
+    margin: auto;
+    background-color: #bcfdcf6c;
+}
+
+section {
+    display: flex;
+    position: relative;
+    flex-wrap: wrap;
+}
+
+#orient {
+    margin: 10px 0px 3px 15px;
+}
+
+p {
+    color: #112D00;
+    font-family: var(--font-poppins);
+}
+
+a {
+    color: #112D00;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+#image {
+    width: 95%;
+    margin: auto;
+}
+
+section img {
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.363);
+}
+
+#container {
+    display: flex;
+    position: relative;
+    flex-wrap: wrap;
+    gap: 5px;
+    padding-left: 16px;
+    margin-bottom: 10px;
+    justify-content: space-between;
+}
+
+#descricao {
+    height: 12vh;
+    width: 100%;
+    line-height: 1.8rem;
+}
+
+#add {
+    display: flex;
+    height: auto;
+    width: 50vw;
+}
+
+#add > input {
+    background-color: red;
+    color: white;
+    font-weight: 600;
+    border: none;
+    box-shadow: 1px 2px 2px rgba(0, 0, 0, 0.329);
+    height: 70%;
+    width: 150px;
+    align-self: flex-end
+}
+
+form {
+    height: auto;
+    width: 120px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+form > p {
+    font-size: 0.8rem;
+    width: 110px;
+}
+
+form > input#cep {
+    width: 79px;
+}
+
+form > input#ok {
+    background-color: red;
+    color: white;
+    font-weight: 600;
+    width: 25px;
+    border: none;
+}
+
+h2 {
+    font-family: var(--font-poppins);
+    color: #112D00;
+}
+
+hr{
+    width: 100%;
+    margin: 20px auto 10px;
+}
