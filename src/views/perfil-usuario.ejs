@@ -1,51 +1,51 @@
     <%- include("./partials/head") %>
 
-    <link rel="stylesheet" href="css/meusPedidos.css">
-    <link rel="stylesheet" href="css/dadosPessoais.css">
+    <link rel="stylesheet" href="css/form.css">
+    <link rel="stylesheet" href="css/perfil-usuario.css">
 </head>
 <body>
     <%- include("./partials/header") %>
 
-    <main id="dadosPessoais">
-        <div class="container">
-            <h2 class="dadosPessoais_titulo">Dados Pessoais</h2>
+    <main id="form">
+        <div class="container section">
+            <h2 class="form__title">Dados Pessoais</h2>
 
-            <div class="dados">
-                <div class="dadosPessoais_dados">
-                    <span class="dados_identificacao">Nome:</span>
-                    <span class="dados_campo">Felipe</span>
+            <div class="details__details">
+                <div class="details__box">
+                    <label for="name">Nome:</label>
+                    <span class="box__value">Felipe</span>
                 </div>
     
     
-                <div class="dadosPessoais_dados">
-                    <span class="dados_identificacao">Sobrenome:</span>
-                    <span class="dados_campo">Alencar da Silva</span>
+                <div class="details__box">
+                    <label for="lastname">Sobrenome:</label>
+                    <span>Alencar da Silva</span>
                 </div>
     
-                <div class="dadosPessoais_dados">
-                    <span class="dados_identificacao">CPF:</span>
-                    <span class="dados_campo">123.456.789-01</span>
+                <div class="details__box">
+                    <label for="cpf">CPF:</label>
+                    <span>123.456.789-01</span>
                 </div>
     
-                <div class="dadosPessoais_dados">
-                    <span class="dados_identificacao">Endereço:</span>
-                    <span class="dados_campo">Rua Alencar Bezera</span>
+                <div class="details__box">
+                    <label for="andress">Endereço:</label>
+                    <span>Rua Alencar Bezera</span>
                 </div>
     
-                <div class="dadosPessoais_dados">
-                    <span class="dados_identificacao">Email:</span>
-                    <span class="dados_campo">felipe.alencar@gmail.com</span>
+                <div class="details__box">
+                    <label for="email">Email:</label>
+                    <span>felipe.alencar@gmail.com</span>
                 </div>
             </div>
 
-            <div class="dados_editar">
-                <button>editar</button>
+            <div class="details__submit j-flex-end">
+                <button class="btn">editar</button>
             </div>
         </div>
     </main>
 
     <section id="meusPedidos">
-        <div class="container">
+        <div class="container section">
             <h2 class="pedidos_titulo">Meus Pedidos</h2>
 
             <div class="pedidos">
@@ -59,7 +59,6 @@
                     <div class="cartao_dados">
                         <h4>Maça Vermelha</h4>
                         
-                        <span>130g</span>
                         <strong id="valor">R&#36; 12,50</strong>
                     </div>
                 </div>
@@ -74,7 +73,7 @@
                     <div class="cartao_dados">
                         <h4>Maça Vermelha</h4>
                         
-                        <span>130g</span>
+                         
                         <strong id="valor">R&#36; 12,50</strong>
                     </div>
                 </div>
@@ -89,7 +88,7 @@
                     <div class="cartao_dados">
                         <h4>Maça Vermelha</h4>
                         
-                        <span>130g</span>
+                         
                         <strong id="valor">R&#36; 12,50</strong>
                     </div>
                 </div>
@@ -104,7 +103,7 @@
                     <div class="cartao_dados">
                         <h4>Maça Vermelha</h4>
                         
-                        <span>130g</span>
+                         
                         <strong id="valor">R&#36; 12,50</strong>
                     </div>
                 </div>
@@ -119,7 +118,7 @@
                     <div class="cartao_dados">
                         <h4>Maça Vermelha</h4>
                         
-                        <span>130g</span>
+                         
                         <strong id="valor">R&#36; 12,50</strong>
                     </div>
                 </div>

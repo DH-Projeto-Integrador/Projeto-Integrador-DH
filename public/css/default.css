@@ -23,15 +23,26 @@
 
 body {
   background-color: #f0fbf3;
+  
+  font-family: var(--font-poppins);
 }
 
 .container {
   margin: 0 1.5rem;
 }
 
+.section {
+  margin: 2rem 1.5rem;
+}
+
 @media (min-width: 1200px) {
   .container {
     margin: 0 auto;
+    max-width: 1200px;
+  }
+
+  .section {
+    margin: 1rem auto;
     max-width: 1200px;
   }
 }
@@ -47,4 +58,19 @@ li {
 img {
   width: 100%;
   height: auto;
+}
+
+input, button {
+  border: none;
+  background-color: none;
+}
+
+input[type=number]::-webkit-inner-spin-button { 
+  -webkit-appearance: none;
+  
+}
+input[type=number] { 
+ -moz-appearance: textfield;
+ appearance: textfield;
+
 }

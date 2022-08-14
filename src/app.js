@@ -6,8 +6,10 @@ const PORT = 3000;
 
 // Importação de Rotas
 const perfilUsuario = require("./routers/perfil-usuario");
+const cadastroUsuario = require("./routers/cadastro-usuario");
 
 // Rotas
+app.use("/", cadastroUsuario);
 app.use("/", perfilUsuario);
 
 // EJS

@@ -1,0 +1,58 @@
+    <%- include("./partials/head") %>
+
+    <link rel="stylesheet" href="css/form.css">
+</head>
+<body>
+    <%- include("./partials/header")%>
+
+    <main id="form">
+        <div class="container section">
+            <h2 class="form__title">Cadastrar-se</h1>
+            <p class="form__paragraph">Já tem uma conta? Faça seu <a href="#">login</a></p>
+
+            <form action="" method="post" class="form__details">
+                <div class="details__box">
+                    <label for="name">Nome:</label>
+                    <input type="text" id="name" name="name">
+                </div>
+
+                <div class="details__box">
+                    <label for="lastname">Sobrenome:</label>
+                    <input type="text" id="lastname" name="lastname">
+                </div>
+
+                <div class="details__box">
+                    <label for="cpf">CPF:</label>
+                    <input type="number" id="cpf" name="cpf">
+                </div>
+
+                <div class="details__box">
+                    <label for="andress">Endereço:</label>
+                    <input type="text" id="andress" name="andress">
+                </div>
+
+                <div class="details__box">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email">
+                </div>
+
+                <div class="details__box">
+                    <label for="password">Senha:</label>
+                    <input type="password" id="password" name="password">
+                </div>
+
+                <div class="details__box no_shadow">
+                    <input type="checkbox" id="term" name="term">
+                    <label for="term">Aceito que li os termos de serviço.</label>
+                </div>
+
+                <div class="details__submit flex-end">
+                    <button type="submit" class="btn">Concluir</button>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <%- include("./partials/footer")%>
+</body>
+</html>
