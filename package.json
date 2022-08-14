@@ -1,0 +1,30 @@
+{
+  "name": "projeto-integrador-dh",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon src/app.js",
+    "format": "npx prettier --write .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DH-Projeto-Integrador/Projeto-Integrador-DH.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DH-Projeto-Integrador/Projeto-Integrador-DH/issues"
+  },
+  "homepage": "https://github.com/DH-Projeto-Integrador/Projeto-Integrador-DH#readme",
+  "dependencies": {
+    "ejs": "^3.1.8",
+    "express": "^4.18.1",
+    "nodemon": "^2.0.19"
+  },
+  "devDependencies": {
+    "prettier": "^2.7.1"
+  }
+}

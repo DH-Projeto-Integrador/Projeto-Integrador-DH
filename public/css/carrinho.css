@@ -1,143 +1,142 @@
 * {
-    margin: 0px;
-    padding: 0px;
-    box-sizing: border-box;  /* define tamanho das caixas pela borda */
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: 600;
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box; /* define tamanho das caixas pela borda */
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 600;
 }
 
 body {
-    background-color: rgb(240, 251, 243);
-    max-width:527px;
-    margin: auto;
-    padding: 20px;
-    text-align: center;
+  background-color: rgb(240, 251, 243);
+  max-width: 527px;
+  margin: auto;
+  padding: 20px;
+  text-align: center;
 }
 
-.titulo{
-font-weight: 600;
-align-self: center;
-text-align: center;
-font-size: 170%;
-color:rgb(65, 65, 65);
+.titulo {
+  font-weight: 600;
+  align-self: center;
+  text-align: center;
+  font-size: 170%;
+  color: rgb(65, 65, 65);
 }
 
-main{
-    background-color: rgb(255, 255, 255);
-    border-radius: 12px;
-    
-    box-shadow: 3px 3px rgba(182, 182, 182, 0.46);
-    padding: 1% 0% 0% 0%;
+main {
+  background-color: rgb(255, 255, 255);
+  border-radius: 12px;
+
+  box-shadow: 3px 3px rgba(182, 182, 182, 0.46);
+  padding: 1% 0% 0% 0%;
 }
 
-.A{    
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-   padding: 3% 0%;
+.A {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 3% 0%;
 }
 
-.A1{
-    display: flex;
-    justify-content: center;
-    width: 260px;
-    height: auto;
-    gap: 5px;
+.A1 {
+  display: flex;
+  justify-content: center;
+  width: 260px;
+  height: auto;
+  gap: 5px;
 }
 
-.A2{
-    display: flex;
-    min-width: 165px;
-    gap: 10px;
-    height: 51px;
+.A2 {
+  display: flex;
+  min-width: 165px;
+  gap: 10px;
+  height: 51px;
 }
 
-.imgMaca{
-    width: 20%;
-    filter: drop-shadow(3px 3px 2px rgba(34, 34, 34, 0.40));
+.imgMaca {
+  width: 20%;
+  filter: drop-shadow(3px 3px 2px rgba(34, 34, 34, 0.4));
 }
 
-.nomeProduto{
- align-self: center;
- text-align: left;
- font-size: 1.2rem;
-color:rgb(65, 65, 65);
+.nomeProduto {
+  align-self: center;
+  text-align: left;
+  font-size: 1.2rem;
+  color: rgb(65, 65, 65);
 }
 
-.valorProduto{
-    align-self: center;
-    text-align: left;
-    font-size: 130%;
-    color:rgb(65, 65, 65)
+.valorProduto {
+  align-self: center;
+  text-align: left;
+  font-size: 130%;
+  color: rgb(65, 65, 65);
 }
 
-.button1{
-    background-color: #ffffff;
-    border-radius: 11px;
-    border-style: solid;
-    padding: 0px 15px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    cursor: pointer;
-    color:rgb(65, 65, 65);
-    font-weight: 900;
-    height: 70%;
-    align-self: center;
+.button1 {
+  background-color: #ffffff;
+  border-radius: 11px;
+  border-style: solid;
+  padding: 0px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  color: rgb(65, 65, 65);
+  font-weight: 900;
+  height: 70%;
+  align-self: center;
 }
 
-.risco{
-    padding: 2%;
+.risco {
+  padding: 2%;
 }
 
-.B{
-    font-size: 130%;
-    color:rgb(65, 65, 65);
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    padding: 15px;
-    gap: 15px;
+.B {
+  font-size: 130%;
+  color: rgb(65, 65, 65);
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  padding: 15px;
+  gap: 15px;
 }
 
-.B1{
-    display: flex;
-    flex-wrap: wrap;
-    width: 65%;
-   justify-content: flex-end;
+.B1 {
+  display: flex;
+  flex-wrap: wrap;
+  width: 65%;
+  justify-content: flex-end;
 }
 
-.B1>p{
-
-    text-align: left;
-    min-width: 160px;
+.B1 > p {
+  text-align: left;
+  min-width: 160px;
 }
 
-.B2{
-    display: flex;
-    flex-direction: column;
-    width: 30%;
-    margin-right: 10px;
+.B2 {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  margin-right: 10px;
 }
 
-.C{
-    display: flex;
-    justify-content: flex-end;
-    align-content: flex-end;
-    padding: 10% 3% 3% 3%;
-    font-size: 130%;
-    color:rgb(65, 65, 65);
+.C {
+  display: flex;
+  justify-content: flex-end;
+  align-content: flex-end;
+  padding: 10% 3% 3% 3%;
+  font-size: 130%;
+  color: rgb(65, 65, 65);
 }
 
-.button2{
-    background-color:#FF0A0A;
-    border-radius: 2px;
-    border-style: none;
-    padding: 5px 15px;
-    font-size: 16px;
-    cursor: pointer;
-    color:rgb(246, 246, 246);
-    font-weight: 900;
-    filter: drop-shadow(3px 3px 2px rgba(34, 34, 34, 0.40));
+.button2 {
+  background-color: #ff0a0a;
+  border-radius: 2px;
+  border-style: none;
+  padding: 5px 15px;
+  font-size: 16px;
+  cursor: pointer;
+  color: rgb(246, 246, 246);
+  font-weight: 900;
+  filter: drop-shadow(3px 3px 2px rgba(34, 34, 34, 0.4));
 }
