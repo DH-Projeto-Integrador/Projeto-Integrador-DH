@@ -1,13 +1,8 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="../../public/css/home.css" />
-  </head>
+  <%- include("./partials/head") %>
+  <link rel="stylesheet" href="../../public/css/home.css" />
+
   <body>
+    <%- include("./partials/header") %>
     <main>
       <div id="banner">
         <a href="#"><img src="../../public/image/Banner.jpg" alt="banner" /></a>
@@ -105,5 +100,6 @@
         </div>
       </div>
     </main>
+    <%- include("./partials/footer") %>
   </body>
 </html>
