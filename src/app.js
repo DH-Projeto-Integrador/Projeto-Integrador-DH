@@ -12,6 +12,15 @@ const cadastroUsuario = require("./routers/cadastro-usuario");
 app.use("/", cadastroUsuario);
 app.use("/", perfilUsuario);
 
+// Rotas testes
+app.get("/footer", (req, res) => {
+  res.render("footer");
+});
+
+app.get("/header", (req, res) => {
+  res.render("header");
+});
+
 // EJS
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));

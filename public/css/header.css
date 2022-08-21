@@ -1,60 +1,94 @@
 #header {
+  height: auto;
   background-color: var(--verde-claro);
-  color: var(--branco);
-  padding: 16px 0;
+  border-bottom-left-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
 }
 
-#header .container {
+.header {
   display: flex;
-  flex-direction: column;
-  gap: 16px;
+  justify-content: space-between;
+  align-items: center;
+
+  min-height: 70px;
 }
 
-.header_menu {
+.header__logo {
+  min-width: 100px;
+}
+
+.header__actions {
+  position: relative;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  text-align: center;
+  gap: 1rem;
 }
 
-.menu_icones ul {
-  font-size: 1.25rem;
-
-  display: inline-flex;
-  gap: 12px;
+.header__actions i {
+  font-size: 1.35rem;
+  color: var(--branco);
+  cursor: pointer;
 }
 
-.input_procurar {
+/* dropdown */
+.menuUser {
+  position: absolute;
+  top: -50%;
+  right: 0;
+  z-index: 1000;
+  transform: translateY(50%);
+
+  display: none;
+  gap: 0.2rem;
+  flex-direction: column;
+
+  border-radius: 0.5rem;
+  padding: 0.5rem;
   background-color: var(--branco);
-  padding: 4px 4px 4px 12px;
-  border-radius: 1rem;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  text-align: start;
 }
 
-.input_procurar i {
+.menuUser a {
   color: var(--preto);
-  border-right: 1px solid var(--preto);
-  padding-right: 6px;
-
-  font-size: 0.8rem;
 }
 
-.input_procurar input {
-  width: calc(100% - 2rem);
-  height: auto;
-  border: none;
+.menuUser__items {
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+
+.menuUser__items:hover {
+  background-color: var(--vermelho);
+  color: var(--branco);
+}
+
+/* Search */
+.dropSearch {
+  display: none;
+  padding-bottom: 1rem;
+}
+
+.search {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  background-color: var(--branco);
+  border-radius: 0.5rem;
+}
+
+.search label {
+  border-radius: 0.5rem 0 0 0.5rem;
+  padding: 0.5rem;
+  color: var(--branco);
+  background: var(--verde-escuro);
+}
+
+.search input {
+  background-color: transparent;
+  padding: 0.25rem 0.5rem;
   outline: none;
 
-  font-family: var(--font-poppins);
-  font-weight: 400;
   letter-spacing: 1px;
-}
-
-.input_procurar input::placeholder {
-  font-family: var(--font-poppins);
-  font-weight: 500;
-}
-
-@media (min-width: 500px) {
-  .menu_logo img {
-    width: 140%;
-  }
 }

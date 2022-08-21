@@ -1,33 +1,41 @@
 #footer {
-  background-color: var(--verde-escuro);
+  margin-top: 2rem;
+  background-color: var(--verde-claro);
   color: var(--branco);
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+}
 
+.footer {
   font-size: 1rem;
-  font-family: var(--font-poppins);
-  font-weight: 400;
-}
-
-#footer .container {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  justify-content: center;
-
+  padding: 2rem 0;
   text-align: center;
-  padding: 16px 0;
 }
 
-#footer .container p {
-  margin-bottom: 14px;
+.footer__icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
 }
 
-#footer .container ul {
-  display: inline-flex;
-  gap: 16px;
-}
-
-.footer_redesSociais {
+.footer__icons svg {
+  width: 1.35rem;
   color: var(--branco);
+}
 
-  font-size: 1.65rem;
+.footer__copyright {
+  padding-bottom: 16px;
+}
+
+@media (min-width: 576px) {
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .footer__copyright {
+    padding: 0;
+  }
 }

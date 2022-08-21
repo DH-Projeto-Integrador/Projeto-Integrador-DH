@@ -1,7 +1,5 @@
-/* 
-    Nesse arquivo vai ter alguns resetes, 
-    mas também tera variaveis de cor, fonte, etc.
-*/
+@import url(./header.css);
+@import url(./footer.css);
 
 * {
   margin: 0;
@@ -23,28 +21,8 @@
 
 body {
   background-color: #f0fbf3;
-  
+
   font-family: var(--font-poppins);
-}
-
-.container {
-  margin: 0 1.5rem;
-}
-
-.section {
-  margin: 2rem 1.5rem;
-}
-
-@media (min-width: 1200px) {
-  .container {
-    margin: 0 auto;
-    max-width: 1200px;
-  }
-
-  .section {
-    margin: 1rem auto;
-    max-width: 1200px;
-  }
 }
 
 a {
@@ -60,17 +38,75 @@ img {
   height: auto;
 }
 
-input, button {
+input,
+button {
   border: none;
   background-color: none;
 }
 
-input[type=number]::-webkit-inner-spin-button { 
+input[type="number"]::-webkit-inner-spin-button {
   -webkit-appearance: none;
-  
 }
-input[type=number] { 
- -moz-appearance: textfield;
- appearance: textfield;
+input[type="number"] {
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
 
+/* Container Responsivo (Bootstrap) */
+.container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+@media screen and (min-width: 576px) {
+  .container {
+    width: 540px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    width: 720px;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    width: 960px;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    width: 1140px;
+  }
+}
+@media (min-width: 1400px) {
+  .container {
+    width: 1320px;
+  }
+}
+
+/* Toggle Event in JS*/
+.show-inline {
+  display: inline;
+}
+
+.show-inlineBlock {
+  display: inline-block;
+}
+
+.show-inlineFlex {
+  display: inline-flex;
+}
+
+.show-block {
+  display: block;
+}
+
+.show-flex {
+  display: flex;
+}
+
+.show-grid {
+  display: grid;
 }
