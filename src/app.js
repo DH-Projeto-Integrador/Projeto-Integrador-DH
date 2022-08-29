@@ -5,10 +5,14 @@ const app = express();
 // Importação de Rotas
 const perfilUsuario = require("./routers/perfil-usuario");
 const cadastroUsuario = require("./routers/cadastro-usuario");
+const home = require('../src/routers/home');
+const produto = require('../src/routers/produto');
 
 // Rotas
 app.use("/", cadastroUsuario);
 app.use("/", perfilUsuario);
+app.use('/', home);
+app.use('/', produto);
 
 // Rotas testes
 app.get("/footer", (req, res) => {
