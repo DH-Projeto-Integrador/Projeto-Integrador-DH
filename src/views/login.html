@@ -11,18 +11,24 @@
 <body>
     <section class="container">
         <h1>Login</h1>
-        <div id="acess">
-            <span>Já tem uma conta? Acesse.</span>
+        <h2>Já tem uma conta? Acesse.</h2>
+        <div class="acess">
             <form action="">
-                <input type="email" name="email" id="email" placeholder="  email@example.com" required>
-                <input type="password" name="password" id="password" placeholder="  Digite sua senha" required>
-                <input type="checkbox" name="remember" id="remember">
-                <label for="remember">Lembrar minha senha</label>
-                <a href="#">Esqueci minha senha</a>
+                <label for="email" class="notVisible">Email</label>
+                <input type="email" name="email" id="email" class="inputLogin" placeholder="  email@example.com" required>
+                <label for="password" class="notVisible">Senha</label>
+                <input type="password" name="password" id="password" class="inputLogin" placeholder="  Digite sua senha" required>
+                <div class="opcoesSenha">
+                    <div>
+                        <input type="checkbox" name="remember" id="remember">
+                        <label for="remember">Lembrar minha senha</label>
+                    </div>
+                    <a href="./recuperarSenha.html">Esqueceu a senha ?</a>
+                </div>
                 <button type="submit">Acessar</button>
             </form>
         </div>
-        <div id="register">
+        <div class="register">
             <span>Ainda não tem uma conta?</span>
             <input type="button" value="Cadastre-se">
         </div>
