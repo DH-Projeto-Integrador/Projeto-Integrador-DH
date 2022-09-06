@@ -1,13 +1,12 @@
 
 body {
   font-family: var(--font-poppins);
-  max-width: 527px;
   height: auto;
   margin: 15px auto;
   text-align: justify;
 }
 
-.container{
+main{
   background-color: var(--branco);
   padding: 0% 2% ;
   border-radius: 12px;

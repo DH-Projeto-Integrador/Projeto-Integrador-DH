@@ -1,6 +1,5 @@
 body {
   height: auto;
-  max-width: 527px;
   margin: auto;
   background-color: #bcfdcf6c;
 }
@@ -11,13 +10,13 @@ section {
   flex-wrap: wrap;
 }
 
-#orient {
-  margin: 10px 0px 3px 15px;
-}
-
-p {
+section p {
   color: #112d00;
   font-family: var(--font-poppins);
+}
+
+#orient {
+  margin: 10px 0px 3px 15px;
 }
 
 a {
@@ -58,7 +57,7 @@ section img {
 #add {
   display: flex;
   height: 40px;
-  width: 50vw;
+  width: 100%;
 }
 
 #add > input {
@@ -96,7 +95,7 @@ form > input#ok {
   border: none;
 }
 
-h2 {
+#about>h2 {
   font-family: var(--font-poppins);
   color: #112d00;
 }

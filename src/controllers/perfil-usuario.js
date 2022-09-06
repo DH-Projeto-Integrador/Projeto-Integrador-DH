@@ -1,6 +1,9 @@
+const path = require('path');
+
 const perfilUsuario = {
+
   view: (req, res) => {
-    res.render("perfil-usuario");
+    res.sendFile(path.join(__dirname, '../views/perfil-usuario.html'));
   },
 };
 

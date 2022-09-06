@@ -18,7 +18,6 @@
   },
   "homepage": "https://github.com/DH-Projeto-Integrador/Projeto-Integrador-DH#readme",
   "dependencies": {
-    "ejs": "^3.1.8",
     "express": "^4.18.1"
   },
   "devDependencies": {

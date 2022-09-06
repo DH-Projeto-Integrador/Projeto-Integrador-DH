@@ -1,6 +1,9 @@
+const path = require('path');
+
 const cadastroUsuario = {
+
     view: (req,res) => {
-        res.render("cadastro")
+        res.sendFile(path.join(__dirname, '../views/cadastro.html'));
     }
 }
 
