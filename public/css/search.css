@@ -1,0 +1,42 @@
+#search-view {
+    margin: 2rem 0;
+}
+
+.search-view {
+    background-color: var(--branco);
+    padding: 1rem;
+}
+
+.search-title {
+    margin-bottom: 2rem;
+}
+
+.carts {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.cartFood {
+    background: var(--verde-claro);
+    border-radius: 0.5rem;
+    width: 100%;
+    max-width: 230px;
+}
+
+.cartFood a {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 1rem;
+    padding: 0.5rem;
+    color: var(--branco);
+}
+
+.cartFood_details,
+.cartFood_details h3 {
+    margin-bottom: 1rem;
+}
+
+.cartFood_img {
+    border-radius: 0.5rem;
+}
