@@ -7,12 +7,16 @@ const perfilUsuario = require("./src/routers/perfil-usuario");
 const cadastroUsuario = require("./src/routers/cadastro-usuario");
 const home = require('./src/routers/home');
 const produto = require('./src/routers/produto');
+const login = require('./src/routers/login');
+const recuperarSenha = require('./src/routers/recuperarSenha');
 
 // Rotas
 app.use("/", cadastroUsuario);
 app.use("/", perfilUsuario);
 app.use('/', home);
 app.use('/', produto);
+app.use('/', login);
+app.use('/', recuperarSenha);
 
 //Configutações
 app.use(express.json());
