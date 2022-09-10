@@ -4,6 +4,9 @@
   color: var(--branco);
   border-top-left-radius: 0.5rem;
   border-top-right-radius: 0.5rem;
+  position: relative;
+  bottom: -44px;
+  width: 100%;
 }
 
 .footer {
@@ -33,6 +36,17 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+  }
+
+  #footer {
+    margin-top: 2rem;
+    background-color: var(--verde-claro);
+    color: var(--branco);
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+    position: relative;
+    bottom: -22px;
+    width: 100%;
   }
 
   .footer__copyright {
