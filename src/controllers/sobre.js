@@ -1,7 +1,11 @@
-const sobre = {
-    view: (req, res) => {
-        res.render('sobre');
-    }
-}
+const path = require('path');
 
-module.exports = sobre;
+const controller = {
+    view: (req, res) => {
+        res.sendFile(path.join(__dirname, '../views/sobre.html'));
+    }
+
+    }
+
+
+module.exports = controller;

@@ -9,7 +9,7 @@ const home = require('./src/routers/home');
 const produto = require('./src/routers/produto');
 const login = require('./src/routers/login');
 const recuperarSenha = require('./src/routers/recuperarSenha');
-
+const sobre = require('./src/routers/sobre');
 // Rotas
 app.use("/", cadastroUsuario);
 app.use("/", perfilUsuario);
@@ -17,7 +17,7 @@ app.use('/', home);
 app.use('/', produto);
 app.use('/', login);
 app.use('/', recuperarSenha);
-
+app.use('/', sobre);
 //Configutações
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
