@@ -10,6 +10,7 @@ const produto = require('./src/routers/produto');
 const login = require('./src/routers/login');
 const recuperarSenha = require('./src/routers/recuperarSenha');
 const sobre = require('./src/routers/sobre');
+const carrinho = require('./src/routers/carrinho');
 // Rotas
 app.use("/", cadastroUsuario);
 app.use("/", perfilUsuario);
@@ -18,6 +19,7 @@ app.use('/', produto);
 app.use('/', login);
 app.use('/', recuperarSenha);
 app.use('/', sobre);
+app.use('/', carrinho);
 //Configutações
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
