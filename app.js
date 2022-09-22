@@ -33,4 +33,13 @@ app.use('/', recuperarSenha);
 app.use('/', sobre);
 app.use('/', carrinho);
 
+// dev
+app.get('/dev/login', (req,res) => {
+    res.sendFile(__dirname + "/src/views/login.dev.html")
+})
+
+app.get('/dev/cadastro', (req,res) => {
+    res.sendFile(__dirname + "/src/views/cadastro.dev.html")
+})
+
 app.listen(3000, () => console.log(`Servidor rodando na porta ${3000}`));
