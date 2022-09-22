@@ -45,16 +45,20 @@
         </div>
       </div>
     </header>
+
     <main class="l-box">
       <div>
         <h1>Login</h1>
         <h2>Já tem uma conta? Acesse.</h2>
         <div class="acess">
-          <form action="">
+          <form action="/login" method="post">
+            
             <label for="email" class="notVisible">Email</label>
             <input type="email" name="email" id="email" class="inputLogin" placeholder="  email@example.com" required>
+            
             <label for="password" class="notVisible">Senha</label>
             <input type="password" name="password" id="password" class="inputLogin" placeholder="  Digite sua senha" required>
+            
             <div class="opcoesSenha">
               <div>
                 <input type="checkbox" name="remember" id="remember">
