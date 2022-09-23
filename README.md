@@ -7,31 +7,43 @@
 [![made in brazil](https://img.shields.io/badge/state%20-bulding-009.svg?style=for-the-badge)]() [![made in brazil](https://img.shields.io/badge/made%20in-brazil-008751.svg?style=for-the-badge)](https://www.google.com/maps/place/brazil)
 </div>
 
-# Techs
+</br>
 
-## Front End
-- HTML5
-- CSS3
-- Javascript
+# Technologies
 
-# Back End
-- NodeJS
-- Express
+<div style="font-size: 1.3rem" align="center">
 
-# Inicializar
+Front End  | Back End     | DevOps         | Data Analytics 
+---        | ---          | ---            | ---            
+HTML5      | NodeJS       | Under analysis | Under analysis 
+CSS3       | Express      
+Javascript | Sequelize    
+
+</div>
+
+</br>
+
+# Start Project
 
 ```bash
-# Clonar Repósitorio
+# clone repository
 git clone https://github.com/DH-Projeto-Integrador/Projeto-Integrador-DH.git
 
-# Instalar Dependências
+# install dependecies
 npm install
 
-# Executar Aplicação
-npm start
+# run application (terminal primary)
+npm run dev
+
+# run tailwindcss (terminal secondary) 
+npm run tailwindcss
 ```
 
-# Desenvolvedores
-- [SystemOfLima](https://github.com/SystemOfLima)
-- [ALANVILASBOAS](https://github.com/ALANVILASBOAS)
-- [souzafilhoisac](https://github.com/souzafilhoisac)
+</br>
+
+# Developers
+by [SystemOfLima](https://github.com/SystemOfLima)
+
+by [ALANVILASBOAS](https://github.com/ALANVILASBOAS)
+
+by [souzafilhoisac](https://github.com/souzafilhoisac)
