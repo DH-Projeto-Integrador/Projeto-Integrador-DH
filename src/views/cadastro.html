@@ -1,125 +1,97 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/default.css"/>
-  <link rel="stylesheet" href="css/cadastro.css"/>
-  <script src="js/dropdown.js" defer></script>
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
-    integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
-    crossorigin="anonymous"
-    referrerpolicy="no-referrer"/>
-    <title>Cadastro</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ifruits - Cadastro</title>
+
+    <link href="/css/main.css" rel="stylesheet">
+
+    <style>
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+        }
+        input[type=number]{
+            -moz-appearance: textfield;
+        }
+    </style>
 </head>
 <body>
-    <header id="header">
-        <div class="container">
-          <div class="header">
-            <a href="#" class="header__logo">
-              <img src="image/logo.svg" alt="Logo Ifruits" />
-            </a>
-  
-            <div class="header__actions">
-              <i class="fa-solid fa-magnifying-glass" id="clickSearch"></i>
-  
-              <i class="fa-solid fa-user" id="clickMenu"></i>
-  
-              <nav class="menuUser" id="dropMenu">
-                <a href="#" class="menuUser__items">Conta</a>
-                <a href="#" class="menuUser__items">Carrinho</a>
-              </nav>
+    <div
+    class="bg-green-900 absolute top-0 left-0 bg-gradient-to-t from-gray-900 via-gray-900 to-green-800 bottom-0 leading-5 h-full w-full overflow-hidden">
+    </div>
+
+    <div
+        class="relative min-h-screen flex lg:grid lg:grid-cols-2 justify-center bg-transparent rounded-3xl shadow-xl"
+    >
+        <div class="flex self-center lg:mx-auto lg:px-14 sm:max-w-4xl xl:max-w-md z-10">
+            <div class="self-center hidden lg:flex flex-col  text-white">
+                <h1 class="my-3 font-semibold text-4xl tracking-wide lg:text-5xl">Ifruits</h1>
+                
+                <p class="pr-3 text-sm opacity-90 text-white lg:text-base">
+                    Lorem ipsum is placeholder text commonly used in the graphic, print,
+                    and publishing industries for previewing layouts and visual mockups
+                </p>
             </div>
-          </div>
-  
-          <div class="dropSearch">
-            <form class="search">
-              <label for="search"
-                ><i class="fa-solid fa-magnifying-glass"></i
-              ></label>
-              <input type="text" placeholder="Pesquisar" name="search" />
-            </form>
-          </div>
         </div>
-      </header>
-    <main class="container">
-            <h1>Cadastre-se</h1>
-            <p>Já tem uma conta? Faça seu <a href="#">login</a></p>
-            <section>
-            <form action="" method="post">
-                    <label for="name">Nome:</label>
-                    <input class="inputCadastro" type="text" id="name" name="name">
-                    <label for="lastname">Sobrenome:</label>
-                    <input class="inputCadastro" type="text" id="lastname" name="lastname">
-                    <label for="cpf">CPF:</label>
-                    <input class="inputCadastro" type="number" id="cpf" name="cpf">
-                    <label for="andress">Endereço:</label>
-                    <input class="inputCadastro" type="text" id="andress" name="andress">
-                    <label for="email">Email:</label>
-                    <input class="inputCadastro" type="email" id="email" name="email">
-                    <label for="password">Senha:</label>
-                    <input class="inputCadastro" type="password" id="password" name="password">
-                <div class="agreeTerms">
-                    <input type="checkbox" id="term" name="term">
-                    <label for="term">li e concordo com os termos de serviço.</label>
+
+        <div class="flex justify-center self-center z-10">
+            <div class="p-12 bg-white mx-auto rounded-3xl w-96 shadow-md shadow-green-200">
+                <div class="mb-7">
+                    <h3 class="font-semibold text-2xl text-gray-800">Cadastrar se</h3>
+                    <p class="text-gray-400">
+                        Já possui uma conta?
+                    <a href="/login" class="text-sm text-green-700 hover:text-green-700">
+                        Login
+                    </a></p>
                 </div>
-                    <button type="submit" class="btn">Cadastrar</button>
-                </div>
-            </form>
-        </section>
-    </main>
-    <footer id="footer">
-        <div class="container">
-          <div class="footer">
-            <p class="footer__copyright">
-              &#169; 2022 Company, Inc. All rights reserved.
-            </p>
-  
-            <div class="footer__icons">
-              <a href="#">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="currentColor"
-                  class="bi bi-facebook"
-                  viewBox="0 0 16 16"
-                >
-                  <path
-                    d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"
-                  />
-                </svg>
-              </a>
-  
-              <a href="#">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="currentColor"
-                  class="bi bi-google"
-                  viewBox="0 0 16 16"
-                >
-                  <path
-                    d="M15.545 6.558a9.42 9.42 0 0 1 .139 1.626c0 2.434-.87 4.492-2.384 5.885h.002C11.978 15.292 10.158 16 8 16A8 8 0 1 1 8 0a7.689 7.689 0 0 1 5.352 2.082l-2.284 2.284A4.347 4.347 0 0 0 8 3.166c-2.087 0-3.86 1.408-4.492 3.304a4.792 4.792 0 0 0 0 3.063h.003c.635 1.893 2.405 3.301 4.492 3.301 1.078 0 2.004-.276 2.722-.764h-.003a3.702 3.702 0 0 0 1.599-2.431H8v-3.08h7.545z"
-                  />
-                </svg>
-              </a>
-  
-              <a href="#">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="currentColor"
-                  class="bi bi-instagram"
-                  viewBox="0 0 16 16"
-                >
-                  <path
-                    d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"
-                  />
-                </svg>
-              </a>
+
+                <form class="space-y-4" method="post" action="/cadastro">
+                    <div>
+                        <input type="text" id="name" name="name" placeholder="Nome completo" class="w-full text-sm text-green-700  px-4 py-3 bg-gray-200 focus:bg-gray-100 border  border-green-700 rounded-lg focus:outline-none focus:border-green-400">
+                    </div>
+
+                    <div>
+                        <input type="email" id="email" name="email" placeholder="Email" class="w-full text-sm text-green-700  px-4 py-3 bg-gray-200 focus:bg-gray-100 border  border-green-700 rounded-lg focus:outline-none focus:border-green-400">
+                    </div>
+
+                    <div>
+                        <input type="number" id="cpf" name="cpf" placeholder="CPF" class="w-full text-sm text-green-700  px-4 py-3 bg-gray-200 focus:bg-gray-100 border  border-green-700 rounded-lg focus:outline-none focus:border-green-400">
+                    </div>
+
+                    <div class="relative" x-data="{ show: true }">
+                        <input placeholder="Senha" id="password" name="password"  :type="show ? 'password' : 'text'" class="text-sm text-green-700 px-4 py-3 rounded-lg w-full bg-gray-200 focus:bg-gray-100 border border-green-700 focus:outline-none focus:border-green-400">
+                        <div class="flex items-center absolute inset-y-0 right-0 mr-3  text-sm leading-5">
+                            <svg @click="show = !show" :class="{'hidden': !show, 'block':show }"
+                                class="h-4 text-green-700" fill="none" xmlns="http://www.w3.org/2000/svg"
+                                viewbox="0 0 576 512">
+                                <path fill="currentColor"
+                                    d="M572.52 241.4C518.29 135.59 410.93 64 288 64S57.68 135.64 3.48 241.41a32.35 32.35 0 0 0 0 29.19C57.71 376.41 165.07 448 288 448s230.32-71.64 284.52-177.41a32.35 32.35 0 0 0 0-29.19zM288 400a144 144 0 1 1 144-144 143.93 143.93 0 0 1-144 144zm0-240a95.31 95.31 0 0 0-25.31 3.79 47.85 47.85 0 0 1-66.9 66.9A95.78 95.78 0 1 0 288 160z">
+                                </path>
+                            </svg>
+
+                            <svg @click="show = !show" :class="{'block': !show, 'hidden':show }"
+                                class="h-4 text-green-700" fill="none" xmlns="http://www.w3.org/2000/svg"
+                                viewbox="0 0 640 512">
+                                <path fill="currentColor"
+                                    d="M320 400c-75.85 0-137.25-58.71-142.9-133.11L72.2 185.82c-13.79 17.3-26.48 35.59-36.72 55.59a32.35 32.35 0 0 0 0 29.19C89.71 376.41 197.07 448 320 448c26.91 0 52.87-4 77.89-10.46L346 397.39a144.13 144.13 0 0 1-26 2.61zm313.82 58.1l-110.55-85.44a331.25 331.25 0 0 0 81.25-102.07 32.35 32.35 0 0 0 0-29.19C550.29 135.59 442.93 64 320 64a308.15 308.15 0 0 0-147.32 37.7L45.46 3.37A16 16 0 0 0 23 6.18L3.37 31.45A16 16 0 0 0 6.18 53.9l588.36 454.73a16 16 0 0 0 22.46-2.81l19.64-25.27a16 16 0 0 0-2.82-22.45zm-183.72-142l-39.3-30.38A94.75 94.75 0 0 0 416 256a94.76 94.76 0 0 0-121.31-92.21A47.65 47.65 0 0 1 304 192a46.64 46.64 0 0 1-1.54 10l-73.61-56.89A142.31 142.31 0 0 1 320 112a143.92 143.92 0 0 1 144 144c0 21.63-5.29 41.79-13.9 60.11z">
+                                </path>
+                            </svg>
+                        </div>
+                    </div>
+
+                    <div>
+                        <button type="submit" class="w-full flex justify-center bg-green-800  hover:bg-green-700 text-gray-100 p-3  rounded-lg tracking-wide font-semibold  cursor-pointer transition ease-in duration-500">
+                            Cadastrar
+                        </button>
+                    </div>
+                </form>
             </div>
-          </div>
         </div>
-      </footer>
+    </div>
+    
+    <svg class="hidden sm:block absolute bottom-0 left-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#fff" fill-opacity="1" d="M0,0L40,42.7C80,85,160,171,240,197.3C320,224,400,192,480,154.7C560,117,640,75,720,74.7C800,75,880,117,960,154.7C1040,192,1120,224,1200,213.3C1280,203,1360,149,1400,122.7L1440,96L1440,320L1400,320C1360,320,1280,320,1200,320C1120,320,1040,320,960,320C880,320,800,320,720,320C640,320,560,320,480,320C400,320,320,320,240,320C160,320,80,320,40,320L0,320Z"></path></svg>
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.js"></script>
 </body>
 </html>
