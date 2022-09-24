@@ -7,12 +7,16 @@ const cadastroUsuario = {
     },
     Create: async (req,res) => {
         await database.sync()
-        const { email, password } = req.body
+        const { name, cep, email, password } = req.body
 
         const newUser = await user.create({
+            name,
+            cep,
             email,
             password
         })
+
+        console.log(newUser)
 
         if(newUser) {
             res.status(201).redirect('/')

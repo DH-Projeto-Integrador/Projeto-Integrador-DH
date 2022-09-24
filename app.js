@@ -17,12 +17,6 @@ const recuperarSenha = require('./src/routers/recuperarSenha');
 const sobre = require('./src/routers/sobre');
 const carrinho = require('./src/routers/carrinho');
 
-// token
-const {
-    CreateAcessToken,
-    IsValidAcessToken
-} = require('./src/middlewares/token')
-
 // Rotas
 app.use("/", cadastroUsuario);
 app.use("/", perfilUsuario);
@@ -32,14 +26,5 @@ app.use('/', login);
 app.use('/', recuperarSenha);
 app.use('/', sobre);
 app.use('/', carrinho);
-
-// dev
-app.get('/dev/login', (req,res) => {
-    res.sendFile(__dirname + "/src/views/login.dev.html")
-})
-
-app.get('/dev/cadastro', (req,res) => {
-    res.sendFile(__dirname + "/src/views/cadastro.dev.html")
-})
 
 app.listen(3000, () => console.log(`Servidor rodando na porta ${3000}`));

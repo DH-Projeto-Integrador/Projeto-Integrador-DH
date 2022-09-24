@@ -8,6 +8,6 @@ const {
 
 router.get("/cadastro", View)
 
-router.post("/cadastro", Create)
+router.get("/cadastro/create", Create)
 
 module.exports = router
