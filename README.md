@@ -22,6 +22,9 @@ Javascript | Sequelize
 </div>
 
 </br>
+# links úteis
+Figma:
+https://www.figma.com/file/cggoINGSbtGyKpav4pIp1K/Ifruits-desktop?node-id=1%3A2
 
 # Start Project
 
