@@ -9,7 +9,7 @@ app.use(express.static(path.join("public")));
 
 // Importação de Rotas
 const cadastroUsuario = require("./src/routers/cadastroUsuario");
-const perfilUsuario = require("./src/routers/perfil-usuario");
+const perfilUsuario = require("./src/routers/perfilUsuario");
 const home = require('./src/routers/home');
 const produto = require('./src/routers/produto');
 const login = require('./src/routers/login');
