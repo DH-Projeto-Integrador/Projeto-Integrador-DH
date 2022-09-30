@@ -27,4 +27,7 @@ app.use('/', recuperarSenha);
 app.use('/', sobre);
 app.use('/', carrinho);
 
+// Dev
+app.get('/dev/header', (req,res) => res.sendFile(path.join(__dirname, "/src/views/header.dev.html")))
+
 app.listen(3000, () => console.log(`Servidor rodando na porta ${3000}`));
