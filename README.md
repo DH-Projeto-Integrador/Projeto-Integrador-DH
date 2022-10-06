@@ -35,6 +35,8 @@ git clone https://github.com/DH-Projeto-Integrador/Projeto-Integrador-DH.git
 # install dependecies
 npm install
 
+#Preencha os dados das suas variáveis locais que estão no arquivo .env
+
 # run application (terminal primary)
 npm run dev
 
@@ -50,3 +52,9 @@ by [SystemOfLima](https://github.com/SystemOfLima)
 by [ALANVILASBOAS](https://github.com/ALANVILASBOAS)
 
 by [souzafilhoisac](https://github.com/souzafilhoisac)
+
+by [mvlopesm](https://github.com/mvlopesm)
+
+by [saviocode](https://github.com/saviocode)
+
+by [peresribeirocaroline](https://github.com/peresribeirocaroline)
