@@ -1,6 +1,11 @@
+require('dotenv')
+    .config();
+
 const express = require("express");
 const path = require("path");
 const app = express();
+
+require('./src/database');
 
 //Configutações
 app.use(express.json());
@@ -16,6 +21,7 @@ const login = require('./src/routers/login');
 const recuperarSenha = require('./src/routers/recuperarSenha');
 const sobre = require('./src/routers/sobre');
 const carrinho = require('./src/routers/carrinho');
+const routesDb = require('./src/routers/routesDb');
 
 // Rotas
 app.use("/", cadastroUsuario);
@@ -26,8 +32,9 @@ app.use('/', login);
 app.use('/', recuperarSenha);
 app.use('/', sobre);
 app.use('/', carrinho);
+app.use(routesDb);
 
 // Dev
 app.get('/dev/header', (req,res) => res.sendFile(path.join(__dirname, "/src/views/header.dev.html")))
 
-app.listen(3000, () => console.log(`Servidor rodando na porta ${3000}`));
+app.listen(process.env.SERVER_PORT, console.log(`Servidor rodando`));
