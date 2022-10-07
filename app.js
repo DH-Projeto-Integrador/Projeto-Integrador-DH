@@ -32,7 +32,7 @@ app.use('/', login);
 app.use('/', recuperarSenha);
 app.use('/', sobre);
 app.use('/', carrinho);
-app.use(routesDb);
+app.use('/', routesDb);
 
 // Dev
 app.get('/dev/header', (req,res) => res.sendFile(path.join(__dirname, "/src/views/header.dev.html")))
