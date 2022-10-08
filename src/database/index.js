@@ -8,7 +8,7 @@ const dbConfig = require('../config/database');
 const connection = new Sequelize(dbConfig);
 
 //Importação das models
-const Categoria = require('../models/Categoria');
+const Categoria = require('../models/CategoriaModel');
 
 
 //Inicialização das models
