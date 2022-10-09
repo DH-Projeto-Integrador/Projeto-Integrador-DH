@@ -1,4 +1,4 @@
-const FornecedorModel = require('../models/Fornecedor');
+const FornecedorModel = require('../models/FornecedorModel');
 
 module.exports = {
 
