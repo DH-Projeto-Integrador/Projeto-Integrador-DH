@@ -10,12 +10,14 @@ const connection = new Sequelize(dbConfig);
 //Importação das models
 const Categoria = require('../models/CategoriaModel');
 const Fornecedor = require('../models/FornecedorModel');
+const Produtos = require('../models/ProdutoModel');
 
 
 //Inicialização das models
 Categoria.init(connection);
 Fornecedor.init(connection);
+Produtos.init(connection);
 //Associação das models
-//Categoria.associate(connection.models);
+Produtos.associate(connection.models);
 
 module.exports = connection;
