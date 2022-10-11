@@ -5,7 +5,7 @@ require('dotenv')
 
 //Configurações do banco de dados
 module.exports = {
-    dialect: process.env.SERVER_DIALECT,
+    dialect: "mysql",
     host: process.env.SERVER_HOST,
     username: process.env.SERVER_USER,
     password: process.env.SERVER_PASSWORD,

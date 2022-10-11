@@ -11,12 +11,15 @@ const connection = new Sequelize(dbConfig);
 const Categoria = require('../models/CategoriaModel');
 const Fornecedor = require('../models/FornecedorModel');
 const Produtos = require('../models/ProdutoModel');
+const Pagamento = require('../models/PagamentoModel');
 
 
 //Inicialização das models
 Categoria.init(connection);
 Fornecedor.init(connection);
 Produtos.init(connection);
+Pagamento.init(connection); 
+
 //Associação das models
 Produtos.associate(connection.models);
 
