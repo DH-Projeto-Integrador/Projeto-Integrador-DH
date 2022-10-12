@@ -4,6 +4,7 @@ const CategoriaController = require('../controllers/CategoriaController');
 const FornecedorController = require('../controllers/FornecedorController');
 const ProdutoController = require('../controllers/ProdutoController');
 const PagamentoController = require('../controllers/PagamentoController');
+const UsuarioController = require('../controllers/UsuarioController');
 
 const routes = express.Router();
 
@@ -29,11 +30,18 @@ routes.patch('/produtos/:id',ProdutoController.updateById);
 routes.delete('/produtos/:id',ProdutoController.deleteById);
 
 //Rotas da tabela de Pagamentos
-routes.get('/pagamento', PagamentoController.getAll);
+routes.get('/pagamento',PagamentoController.getAll);
 routes.post('/pagamento',PagamentoController.store);
 routes.get('/pagamento/:id',PagamentoController.getById);
 routes.patch('/pagamento/:id',PagamentoController.updateById);
 routes.delete('/pagamento/:id',PagamentoController.deleteById);
+
+//Rotas da tabela de Usuario
+routes.get('/usuario',UsuarioController.getAll);
+routes.post('/usuario',UsuarioController.store);
+routes.get('/usuario/:id',UsuarioController.getById);
+routes.patch('/usuario/:id',UsuarioController.updateById);
+routes.delete('/usuario/:id',UsuarioController.deleteById);
 
 
 module.exports = routes;
