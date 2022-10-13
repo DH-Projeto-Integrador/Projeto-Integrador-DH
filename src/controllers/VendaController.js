@@ -16,9 +16,14 @@ module.exports = {
 
         const [req, res] = arguments;
 
-        const { date_sell, amount, status_sale,  } = req.body;
+        const { date_sell, amount, status_sale, id_type_payments, id_users  } = req.body;
 
-        const sale = await VendaModel.create({ name });
+        const sale = await VendaModel.create({
+             date_sell, 
+             amount, 
+             status_sale, 
+             id_type_payments, 
+             id_users });
     
         if(sale) {
             return res

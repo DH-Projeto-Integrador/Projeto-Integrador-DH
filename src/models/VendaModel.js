@@ -11,11 +11,11 @@ class Vendas extends Model {
             sequelize
         })
     }
- /*   static associate(models) {
-        this.belongsTo(models.Usuarios, { foreignKey: 'id_usuario', as: 'usuario' });
-        this.belongsTo(models.Pagamentos, { foreignKey: 'id_pagamento', as: 'pagamento' });
+    static associate(models) {
+        this.belongsTo(models.Usuarios , { foreignKey: 'id_users', as: 'usuarios' });
+        this.belongsTo(models.Pagamentos, { foreignKey: 'id_type_payments', as: 'pagamentos' });
     }
- */
+ 
 }
 
 module.exports = Vendas;

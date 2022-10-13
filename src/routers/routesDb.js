@@ -5,6 +5,7 @@ const FornecedorController = require('../controllers/FornecedorController');
 const ProdutoController = require('../controllers/ProdutoController');
 const PagamentoController = require('../controllers/PagamentoController');
 const UsuarioController = require('../controllers/UsuarioController');
+const VendaController = require('../controllers/VendaController');
 
 const routes = express.Router();
 
@@ -42,6 +43,14 @@ routes.post('/usuario',UsuarioController.store);
 routes.get('/usuario/:id',UsuarioController.getById);
 routes.patch('/usuario/:id',UsuarioController.updateById);
 routes.delete('/usuario/:id',UsuarioController.deleteById);
+
+//Rotas da tabela de Usuario
+routes.get('/venda',VendaController.getAll);
+routes.post('/venda',VendaController.store);
+routes.get('/venda/:id',VendaController.getById);
+routes.patch('/venda/:id',VendaController.updateById);
+routes.delete('/venda/:id',VendaController.deleteById);
+
 
 
 module.exports = routes;

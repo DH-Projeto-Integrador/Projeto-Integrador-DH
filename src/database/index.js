@@ -13,6 +13,7 @@ const Fornecedor = require('../models/FornecedorModel');
 const Produtos = require('../models/ProdutoModel');
 const Pagamento = require('../models/PagamentoModel');
 const Usuario = require('../models/UsuarioModel');
+const Venda = require('../models/VendaModel');
 
 //Inicialização das models
 Categoria.init(connection);
@@ -20,8 +21,10 @@ Fornecedor.init(connection);
 Produtos.init(connection);
 Pagamento.init(connection);
 Usuario.init(connection); 
+Venda.init(connection);
 
 //Associação das models
 Produtos.associate(connection.models);
+Venda.associate(connection.models);
 
 module.exports = connection;
