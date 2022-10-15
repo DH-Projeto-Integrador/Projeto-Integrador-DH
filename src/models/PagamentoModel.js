@@ -9,6 +9,9 @@ class Pagamentos extends Model {
             sequelize
         })
     }
+        static associate(models) {
+        this.hasMany(models.Vendas , { foreignKey: 'id_type_payments', as: 'venda' });
+    }
 }
 
 module.exports = Pagamentos;

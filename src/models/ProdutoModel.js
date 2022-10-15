@@ -15,6 +15,7 @@ class Produtos extends Model {
     static associate(models) {
         this.belongsTo(models.Categorias, { foreignKey: 'id_category', as: 'categoria' });
         this.belongsTo(models.Fornecedores, { foreignKey: 'id_provider', as: 'fornecedor' });
+        this.belongsToMany(models.VendaItem, { through:'venda_itens', foreignKey: 'id_product', as: 'venda' });
     }
 }
 

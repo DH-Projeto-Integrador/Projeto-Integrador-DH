@@ -3,6 +3,7 @@ require('dotenv')
 
 const express = require("express");
 const path = require("path");
+const cors = require('cors');
 const app = express();
 
 require('./src/database');
@@ -11,6 +12,7 @@ require('./src/database');
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join("public")));
+app.use(cors());
 
 // Importação de Rotas
 const cadastroUsuario = require("./src/routers/cadastroUsuario");
