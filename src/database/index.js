@@ -14,6 +14,7 @@ const Produtos = require('../models/ProdutoModel');
 const Pagamento = require('../models/PagamentoModel');
 const Usuario = require('../models/UsuarioModel');
 const Venda = require('../models/VendaModel');
+const VendaItem = require('../models/VendaItemModel');
 
 //Inicialização das models
 Categoria.init(connection);
@@ -22,9 +23,11 @@ Produtos.init(connection);
 Pagamento.init(connection);
 Usuario.init(connection); 
 Venda.init(connection);
+VendaItem.init(connection);
 
 //Associação das models
 Produtos.associate(connection.models);
 Venda.associate(connection.models);
+VendaItem.associate(connection.models);
 
 module.exports = connection;
