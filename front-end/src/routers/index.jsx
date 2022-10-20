@@ -4,6 +4,7 @@ import { App } from "../App";
 import { Home } from "../pages/Home";
 import { Login } from "../pages/Login";
 import { Profile } from "../pages/Profile";
+import { Cadastro } from "../pages/Cadastro";
 
 const router = createBrowserRouter([
   {
@@ -18,15 +19,15 @@ const router = createBrowserRouter([
         path: "profile",
         element: <Profile />,
       },
+      {
+        path: "login",
+        element: <Login />,
+      },
+      {
+        path: "cadastro",
+        element: <Cadastro />,
+      },
     ],
-  },
-  {
-    path: "login",
-    element: <Login />,
-  },
-  {
-    path: "cadastro",
-    element: <Cadastro />,
   },
 ]);
 
