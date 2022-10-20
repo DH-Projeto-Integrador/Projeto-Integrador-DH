@@ -1,14 +1,13 @@
-import "./global.css";
+import { Outlet } from "react-router-dom";
+import { Header } from "./components/Header";
 
-import { Route, Routes } from "react-router-dom";
-import { Home } from "./pages/Home";
-import { Profile } from "./pages/Profile";
+import "./styles/global.css";
 
 export function App() {
   return (
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/profile" element={<Profile />} />
-    </Routes>
+    <>
+      <Header />
+      <Outlet />
+    </>
   );
 }
