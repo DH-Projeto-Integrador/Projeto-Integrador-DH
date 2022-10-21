@@ -1,34 +1,33 @@
-'use strict';
+"use strict";
 
 module.exports = {
-    up: (queryInterface, Sequelize) => {
-
-    return queryInterface.createTable('vendas', {
+  up: (queryInterface, Sequelize) => {
+    return queryInterface.createTable("vendas", {
       id: {
         type: Sequelize.INTEGER,
         primaryKey: true,
         autoIncrement: true,
-        allowNull: false
+        allowNull: false,
       },
       id_users: {
         type: Sequelize.INTEGER,
         allowNull: false,
         refereces: {
-          model: 'usuarios',
-          key: 'id'
+          model: "usuarios",
+          key: "id",
         },
-        onUpdate: 'CASCADE',
-        onDelete: 'CASCADE'
+        onUpdate: "CASCADE",
+        onDelete: "CASCADE",
       },
       id_type_payments: {
         type: Sequelize.INTEGER,
         allowNull: false,
         refereces: {
-          model: 'pagamentos',
-          key: 'id'
+          model: "pagamentos",
+          key: "id",
         },
-        onUpdate: 'CASCADE',
-        onDelete: 'CASCADE'
+        onUpdate: "CASCADE",
+        onDelete: "CASCADE",
       },
       date_sell: {
         type: Sequelize.DATE,
@@ -53,9 +52,7 @@ module.exports = {
     });
   },
 
-    down: (queryInterface, Sequelize) => {
-
-    return queryInterface.dropTable('vendas');
-
-  }
+  down: (queryInterface, Sequelize) => {
+    return queryInterface.dropTable("vendas");
+  },
 };

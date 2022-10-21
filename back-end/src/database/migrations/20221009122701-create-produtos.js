@@ -1,34 +1,33 @@
-'use strict';
+"use strict";
 
 module.exports = {
-    up: (queryInterface, Sequelize) => {
-
-    return queryInterface.createTable('produtos', {
+  up: (queryInterface, Sequelize) => {
+    return queryInterface.createTable("produtos", {
       id: {
         type: Sequelize.INTEGER,
         primaryKey: true,
         autoIncrement: true,
-        allowNull: false
+        allowNull: false,
       },
       id_category: {
         type: Sequelize.INTEGER,
         allowNull: false,
         refereces: {
-          model: 'categorias',
-          key: 'id'
+          model: "categorias",
+          key: "id",
         },
-        onUpdate: 'CASCADE',
-        onDelete: 'CASCADE'
+        onUpdate: "CASCADE",
+        onDelete: "CASCADE",
       },
       id_provider: {
         type: Sequelize.INTEGER,
         allowNull: false,
         refereces: {
-          model: 'fornecedores',
-          key: 'id'
+          model: "fornecedores",
+          key: "id",
         },
-        onUpdate: 'CASCADE',
-        onDelete: 'CASCADE'
+        onUpdate: "CASCADE",
+        onDelete: "CASCADE",
       },
       image_product: {
         type: Sequelize.STRING,
@@ -39,7 +38,7 @@ module.exports = {
         allowNull: false,
       },
       price: {
-        type: Sequelize.DECIMAL(10,2),
+        type: Sequelize.DECIMAL(10, 2),
         allowNull: false,
       },
       quantity_stock: {
@@ -57,9 +56,7 @@ module.exports = {
     });
   },
 
-    down: (queryInterface, Sequelize) => {
-
-    return queryInterface.dropTable('produtos');
-
-  }
+  down: (queryInterface, Sequelize) => {
+    return queryInterface.dropTable("produtos");
+  },
 };
