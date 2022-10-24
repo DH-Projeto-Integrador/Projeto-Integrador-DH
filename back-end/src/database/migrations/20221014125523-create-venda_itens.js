@@ -1,34 +1,33 @@
-'use strict';
+"use strict";
 
 module.exports = {
-    up: (queryInterface, Sequelize) => {
-
-    return queryInterface.createTable('venda_itens', {
+  up: (queryInterface, Sequelize) => {
+    return queryInterface.createTable("venda_itens", {
       id: {
         type: Sequelize.INTEGER,
         primaryKey: true,
         autoIncrement: true,
-        allowNull: false
+        allowNull: false,
       },
       id_sale: {
         type: Sequelize.INTEGER,
         allowNull: false,
         refereces: {
-          model: 'vendas',
-          key: 'id'
+          model: "vendas",
+          key: "id",
         },
-        onUpdate: 'CASCADE',
-        onDelete: 'CASCADE'
+        onUpdate: "CASCADE",
+        onDelete: "CASCADE",
       },
       id_product: {
         type: Sequelize.INTEGER,
         allowNull: false,
         refereces: {
-          model: 'produtos',
-          key: 'id'
+          model: "produtos",
+          key: "id",
         },
-        onUpdate: 'CASCADE',
-        onDelete: 'CASCADE'
+        onUpdate: "CASCADE",
+        onDelete: "CASCADE",
       },
       qty_products: {
         type: Sequelize.INTEGER,
@@ -49,9 +48,7 @@ module.exports = {
     });
   },
 
-    down: (queryInterface, Sequelize) => {
-
-    return queryInterface.dropTable('venda_itens');
-
-  }
+  down: (queryInterface, Sequelize) => {
+    return queryInterface.dropTable("venda_itens");
+  },
 };

@@ -1,14 +1,13 @@
-'use strict';
+"use strict";
 
 module.exports = {
-    up: (queryInterface, Sequelize) => {
-
-    return queryInterface.createTable('pagamentos', {
+  up: (queryInterface, Sequelize) => {
+    return queryInterface.createTable("pagamentos", {
       id: {
         type: Sequelize.INTEGER,
         primaryKey: true,
         autoIncrement: true,
-        allowNull: false
+        allowNull: false,
       },
       type_payment: {
         type: Sequelize.STRING,
@@ -25,9 +24,7 @@ module.exports = {
     });
   },
 
-    down: (queryInterface, Sequelize) => {
-
-    return queryInterface.dropTable('pagamentos');
-
-  }
+  down: (queryInterface, Sequelize) => {
+    return queryInterface.dropTable("pagamentos");
+  },
 };
