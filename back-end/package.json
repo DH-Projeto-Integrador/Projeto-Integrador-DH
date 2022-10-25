@@ -5,7 +5,7 @@
   "main": "app.js",
   "scripts": {
     "dev": "nodemon src/app.js",
-    "tailwindcss": "npx tailwindcss -i ./public/css/root.css -o ./public/css/main.css --watch"
+    "database": "npx sequelize-cli db:create && npx sequelize-cli db:migrate"
   },
   "repository": {
     "type": "git",
@@ -28,7 +28,6 @@
   },
   "devDependencies": {
     "nodemon": "^2.0.19",
-    "sequelize-cli": "^6.5.1",
-    "tailwindcss": "^3.1.8"
+    "sequelize-cli": "^6.5.1"
   }
 }
