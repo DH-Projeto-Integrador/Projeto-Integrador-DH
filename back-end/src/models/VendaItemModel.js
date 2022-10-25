@@ -14,11 +14,8 @@ class VendaItem extends Model {
     );
   }
   static associate(models) {
-    this.belongsTo(models.Produtos, {
-      foreignKey: "id_product",
-      as: "produto",
-    });
-    this.belongsTo(models.Vendas, { foreignKey: "id_sale", as: "Venda" });
+    this.belongsToMany(models.Produtos, { through:'venda_itens', foreignKey: 'id_product', as: 'produto' });
+    this.belongsToMany(models.Vendas, { through:'venda_itens', foreignKey: 'id_sale', as: 'Venda' });
   }
 }
 
