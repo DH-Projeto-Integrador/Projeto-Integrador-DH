@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 export function Cadastro() {
   return (
     <div className="flex justify-center items-center h-screen px-4 md:px-0 container m-auto">
-      <div className="min-w-[31.25rem] min-h-96 bg-white border shadow-md rounded-xl flex flex-col justify-center items-center">
+      <div className="w-full sm:w-[31.25rem] min-h-96 bg-white border shadow-md rounded-xl flex flex-col justify-center items-center">
         <div className="w-full">
           <div className="text-center">
             <h2 className="text-gray-700 text-xl pt-8 font-bold">Cadastro</h2>

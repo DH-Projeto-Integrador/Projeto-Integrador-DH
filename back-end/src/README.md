@@ -3,7 +3,7 @@
 ```bash
 #As configurações do banco já estão prontas >>
 #Comandos no npm: 
-npx sequelize-cli db:create (cria o banco no workbench)
+npx sequelize-cli db:create
 
 #Comandos no npm: 
 npx sequelize-cli migration:generate --name create-nomedatabelaaqui
