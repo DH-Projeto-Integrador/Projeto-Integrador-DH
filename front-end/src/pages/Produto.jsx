@@ -13,7 +13,7 @@ export function Produto() {
     return (
         <>
             <Header/>
-            <main className="container m-auto text-center font-medium my-2 max-w-3xl border shadow-md rounded-xl">
+            <main className="container m-auto text-center font-medium my-2 max-w-2xl border shadow-md rounded-xl">
                 <section className="flex-wrap ">
                     <div className="w-60 my-2 mx-3">
                         <p><a href="" className="hover:underline">Home </a>&gt; <a href="" className="hover:underline">Frutas </a>&gt; Maçã</p>
