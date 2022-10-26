@@ -1,5 +1,7 @@
 import { useState, useCallback } from "react";
 import { Link } from "react-router-dom";
+import { Header } from "../components/Header"
+import { Footer } from "../components/Footer"
 
 export function Produto() {
     const [quantityProducts, setQuantityProducts] = useState()
@@ -10,7 +12,8 @@ export function Produto() {
 
     return (
         <>
-            <main className="max-w-3xl pt-1 m-auto mt-2">
+            <Header/>
+            <main className="container m-auto text-center font-medium my-2 max-w-3xl border shadow-md rounded-xl">
                 <section className="flex-wrap ">
                     <div className="w-60 my-2 mx-3">
                         <p><a href="" className="hover:underline">Home </a>&gt; <a href="" className="hover:underline">Frutas </a>&gt; Maçã</p>
@@ -61,6 +64,7 @@ export function Produto() {
                     </div>
                 </section>
             </main>
+            <Footer/>
         </>
     )
 }
