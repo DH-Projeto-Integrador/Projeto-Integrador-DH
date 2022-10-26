@@ -1,50 +1,60 @@
 import { Link } from "react-router-dom";
-import "../components/carrinho.css";
+import { Header } from "../components/Header";
+import { Footer } from "../components/Footer";
 
 export function Carrinho() {
   return (
     <>
-      <main class="container">
-        <h1>Carrinho</h1>
-        <div class="top">
-          <div class="top-produto">
+      <Header />
+      <main className="container m-auto text-center font-medium my-2 max-w-3xl border shadow-md rounded-xl">
+        <h1 className="py-2 self-center text-xl font-bold text-zinc-700 w-full">Carrinho</h1>
+        <div className="flex flex-wrap justify-center gap-3">
+          <div className="flex justify-center w-64 gap-5">
             <img
-              class="imgMaca"
+              className="w-1/4 h-3/4 self-center"
               src="https://media.gettyimages.com/photos/red-apple-picture-id184276818?k=20&m=184276818&s=612x612&w=0&h=QxOcueqAUVTdiJ7DVoCu-BkNCIuwliPEgtAQhgvBA_g="
               alt="maçã"
             />
-            <p class="nomeProduto">MAÇÃ VERMELHA</p>
+            <p className="self-center text-base font-bold text-zinc-700 w-full">
+              MAÇÃ VERMELHA 500g
+            </p>
           </div>
-          <div class="top-quant-valor">
-            <button class="button1">500 +</button>
-            <p class="valorProduto">R$12,35</p>
+          <div className="flex gap-3">
+            <input
+              className="shadow appearance-none border rounded w-16 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline my-4"
+              name="quantidade"
+              type="number"
+              defaultValue={1}
+            />
+            <p className="self-center text-base font-bold text-zinc-700 w-full">R$12,35</p>
           </div>
         </div>
 
-        <div class="risco">
+        <div className="py-5">
           <hr />
         </div>
 
-        <div class="mid">
-          <div class="mid-frete">
+        <div className="flex flex-row justify-end py-5 self-center text-base font-bold text-zinc-700 w-full gap-3">
+          <div className="flex flex-wrap flex-col text-left w-2/5 justify-end">
             <p>Frete</p>
             <p>Total com frete</p>
           </div>
 
-          <div class="mid-valor">
+          <div className="flex flex-col w-24 text-left">
             <p>R$ 5,00</p>
             <p>R$17,35</p>
           </div>
         </div>
 
-        <div class="risco">
+        <div className="py-3">
           <hr />
         </div>
 
-        <div class="bottom">
-          <button class="button2">Finalizar Compra</button>
+        <div className="flex justify-center py-8">
+          <button className="w-72 bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-2 rounded focus:outline-none focus:shadow-outline m-5">Finalizar Compra</button>
         </div>
       </main>
+      <Footer />
     </>
   );
 }
