@@ -5,7 +5,6 @@ import { Footer } from "../components/Footer";
 export function Carrinho() {
   return (
     <>
-      <Header />
       <main className="container m-auto text-center font-medium mt-14 mb-72 max-w-2xl border shadow-md rounded-xl">
         <h1 className="py-2 self-center text-xl font-bold text-zinc-700 w-full">Carrinho</h1>
         <div className="flex flex-wrap justify-center gap-3">
@@ -54,7 +53,6 @@ export function Carrinho() {
           <button className="w-72 bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-2 rounded focus:outline-none focus:shadow-outline m-5">Finalizar Compra</button>
         </div>
       </main>
-      <Footer />
     </>
   );
 }

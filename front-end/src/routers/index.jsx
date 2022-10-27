@@ -12,16 +12,18 @@ const Routers = [
     path: "/",
     element: <App />,
     children: [
-      { index: true, element: <Home /> },
+      { index: true,
+        element: <Home /> 
+      },  
+      {
+        path: "produto",
+        element: <Produto />,
+      },
+      {
+        path: "carrinho",
+        element: <Carrinho />,
+      },
     ],
-  },
-  {
-    path: "produto",
-    element: <Produto />,
-  },
-  {
-    path: "carrinho",
-    element: <Carrinho />,
   },
   {
     path: "login",
