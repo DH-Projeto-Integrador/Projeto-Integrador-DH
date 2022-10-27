@@ -9,6 +9,7 @@ class Produtos extends Model {
         name: DataTypes.STRING,
         price: DataTypes.INTEGER,
         quantity_stock: DataTypes.INTEGER,
+        description: DataTypes.STRING(1000),
       },
       {
         sequelize,
