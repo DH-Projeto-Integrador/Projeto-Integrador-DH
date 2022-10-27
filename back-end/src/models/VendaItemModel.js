@@ -6,7 +6,7 @@ class VendaItem extends Model {
     super.init(
       {
         qty_products: DataTypes.DATE,
-        price_sold: DataTypes.INTEGER,
+        price_sold: DataTypes.DECIMAL,
       },
       {
         sequelize,
