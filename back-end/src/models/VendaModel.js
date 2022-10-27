@@ -6,8 +6,8 @@ class Vendas extends Model {
     super.init(
       {
         date_sell: DataTypes.DATE,
-        amount: DataTypes.INTEGER,
-        status_sale: DataTypes.INTEGER,
+        amount: DataTypes.DECIMAL,
+        status_sale: DataTypes.ENUM("Aguardando Pagamento", "Pagamento Efetuado"),
       },
       {
         sequelize,

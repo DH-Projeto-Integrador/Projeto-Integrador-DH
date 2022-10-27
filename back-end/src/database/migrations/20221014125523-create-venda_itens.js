@@ -34,7 +34,7 @@ module.exports = {
         allowNull: false,
       },
       price_sold: {
-        type: Sequelize.INTEGER,
+        type: Sequelize.DECIMAL(10, 2),
         allowNull: false,
       },
       created_at: {
@@ -43,7 +43,7 @@ module.exports = {
       },
       updated_at: {
         type: Sequelize.DATE,
-        allowNull: false,
+        allowNull: true,
       },
     });
   },

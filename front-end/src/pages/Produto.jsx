@@ -4,12 +4,6 @@ import { Header } from "../components/Header"
 import { Footer } from "../components/Footer"
 
 export function Produto() {
-    const [quantityProducts, setQuantityProducts] = useState()
-
-    const handleAdd = useCallback(() => setQuantityProducts(quantityProducts++), [quantityProducts])
-
-    const handleRemove = useCallback(() => setQuantityProducts(quantityProducts--), [quantityProducts])
-
     return (
         <>
             <main className="container m-auto text-center font-medium my-2 max-w-2xl border shadow-md rounded-xl">

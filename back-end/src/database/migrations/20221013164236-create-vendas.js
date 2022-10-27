@@ -34,11 +34,12 @@ module.exports = {
         allowNull: false,
       },
       amount: {
-        type: Sequelize.INTEGER,
+        type: Sequelize.DECIMAL(10, 2),
         allowNull: false,
       },
       status_sale: {
-        type: Sequelize.INTEGER,
+        type: Sequelize.ENUM("Aguardando Pagamento", "Pagamento Efetuado"),
+        defaultValue: "Aguardando Pagamento",
         allowNull: false,
       },
       created_at: {
