@@ -16,7 +16,7 @@ const Routers = [
         element: <Home /> 
       },  
       {
-        path: "produto",
+        path: ":idProduct",
         element: <Produto />,
       },
       {
