@@ -1,8 +1,20 @@
 import { Button } from "../components/Button";
 import { Card } from "../components/Card";
 import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+import ProductService from '../services/product.service'
 
 export function Home() {
+
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+
+    ProductService.getMany()
+      .then(response => setProducts(response))
+
+  }, []);
+
   return (
     <>
       <aside className="h-72">
@@ -39,19 +51,12 @@ export function Home() {
         </h2>
 
         <div
-          className="w-full grid gap-2"
+          className="w-full grid gap-5"
           style={{
             gridTemplateColumns: "repeat(auto-fill, minmax(14.5rem, 1fr))",
           }}
         >
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
+          {products.map(currentProduct => <Card key={currentProduct.id} product={currentProduct} /> )}
         </div>
       </main>
     </>

@@ -24,9 +24,9 @@ routes.patch("/fornecedores/:id", FornecedorController.updateById);
 routes.delete("/fornecedores/:id", FornecedorController.deleteById);
 
 //Rotas da tabela de Produtos
-routes.get("/produtos", ProdutoController.getAll);
+routes.get("/", ProdutoController.getAll);
 routes.post("/categorias/:id_category/produtos", ProdutoController.store);
-routes.get("/produtos/:id", ProdutoController.getById);
+routes.get("/:id", ProdutoController.getById);
 routes.patch("/produtos/:id", ProdutoController.updateById);
 routes.delete("/produtos/:id", ProdutoController.deleteById);
 
