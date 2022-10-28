@@ -67,9 +67,9 @@ module.exports = {
 
     const { email, password } = req.body;
 
-    const userFound = await UsuarioModel.findOne({where: { email }});
+    const userFound = await UsuarioModel.findOne({ where: { email } });
 
-    if (userFound && userFound.password == password ) {
+    if (userFound && userFound.password == password) {
       const token = jwt.sign(
         {
           exp: Math.floor(Date.now() / 1000) + 60 * 60,
@@ -87,7 +87,7 @@ module.exports = {
 
       return res.status(200).json(token);
     }
-    
+
     return res.status(404).json({ Message: "Login invalido" });
   },
 
@@ -121,6 +121,7 @@ module.exports = {
     }
 
     userFound.destroy();
+
     res.status(200).json({ Message: `Usuario deletada com sucesso!` });
   },
 };

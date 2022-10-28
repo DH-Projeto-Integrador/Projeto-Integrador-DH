@@ -23,11 +23,11 @@ module.exports = {
       id_users,
     });
 
-    if (sale) {
-      return res.status(201).json(sale);
-    } else {
-      res.status(401).json({ Message: "Venda não cadastrada." });
+    if (!sale) {
+      return res.status(401).json({ Message: "Venda não cadastrada." });
     }
+
+    return res.status(201).json(sale);
   },
   async getById() {
     const [req, res] = arguments;
@@ -36,11 +36,11 @@ module.exports = {
 
     const saleFound = await VendaModel.findByPk(id);
 
-    if (saleFound) {
-      res.status(200).json(saleFound);
-    } else {
-      res.status(404).json({ Message: "Venda não encontrada" });
+    if (!saleFound) {
+      return res.status(404).json({ Message: "Venda não encontrada" });
     }
+
+    return res.status(200).json(saleFound);
   },
   async updateById() {
     const [req, res] = arguments;
@@ -49,15 +49,15 @@ module.exports = {
 
     const saleFound = await VendaModel.findByPk(id);
 
-    if (saleFound) {
-      saleFound.set(req.body);
-
-      const saleUpdated = await saleFound.save();
-
-      res.status(200).json(saleUpdated);
-    } else {
-      res.status(404).json({ message: "Venda não encontrada" });
+    if (!saleFound) {
+      return res.status(404).json({ message: "Venda não encontrada" });
     }
+
+    saleFound.set(req.body);
+
+    const saleUpdated = await saleFound.save();
+
+    return res.status(200).json(saleUpdated);
   },
 
   async deleteById() {
@@ -67,11 +67,12 @@ module.exports = {
 
     const saleFound = await VendaModel.findByPk(id);
 
-    if (saleFound) {
-      saleFound.destroy();
-      res.status(200).json({ Message: `Venda deletada com sucesso!` });
-    } else {
+    if (!saleFound) {
       res.status(404).json({ message: "Venda não encontrada" });
     }
+
+    saleFound.destroy();
+
+    return res.status(200).json({ Message: `Venda deletada com sucesso!` });
   },
 };

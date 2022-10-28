@@ -2,7 +2,7 @@ const CategoriaModel = require("../models/CategoriaModel");
 
 module.exports = {
   async getAll() {
-    const [_req, res] = arguments;
+    const [, res] = arguments;
 
     const categories = await CategoriaModel.findAll();
 
@@ -16,11 +16,11 @@ module.exports = {
 
     const category = await CategoriaModel.create({ name });
 
-    if (category) {
-      return res.status(201).json(category);
-    } else {
-      res.status(401).json({ Message: "Categoria não cadastrada." });
+    if (!category) {
+      return res.status(401).json({ Message: "Categoria não cadastrada." });
     }
+
+    return res.status(201).json(category);
   },
   async getById() {
     const [req, res] = arguments;
@@ -29,11 +29,10 @@ module.exports = {
 
     const categoryFound = await CategoriaModel.findByPk(id);
 
-    if (categoryFound) {
-      res.status(200).json(categoryFound);
-    } else {
-      res.status(404).json({ Message: "Categoria não encontrada" });
+    if (!categoryFound) {
+      return res.status(404).json({ Message: "Categoria não encontrada" });
     }
+    return res.status(200).json(categoryFound);
   },
   async updateById() {
     const [req, res] = arguments;
@@ -42,15 +41,15 @@ module.exports = {
 
     const categoryFound = await CategoriaModel.findByPk(id);
 
-    if (categoryFound) {
-      categoryFound.set(req.body);
-
-      const categoryUpdated = await categoryFound.save();
-
-      res.status(200).json(categoryUpdated);
-    } else {
-      res.status(404).json({ message: "Categoria não encontrada" });
+    if (!categoryFound) {
+      return res.status(404).json({ message: "Categoria não encontrada" });
     }
+
+    categoryFound.set(req.body);
+
+    const categoryUpdated = await categoryFound.save();
+
+    return res.status(200).json(categoryUpdated);
   },
 
   async deleteById() {
@@ -60,11 +59,12 @@ module.exports = {
 
     const categoryFound = await CategoriaModel.findByPk(id);
 
-    if (categoryFound) {
-      categoryFound.destroy();
-      res.status(200).json({ Message: `Categoria deletada com sucesso!` });
-    } else {
+    if (!categoryFound) {
       res.status(404).json({ message: "Categoria não encontrada" });
     }
+
+    categoryFound.destroy();
+
+    res.status(200).json({ Message: `Categoria deletada com sucesso!` });
   },
 };
