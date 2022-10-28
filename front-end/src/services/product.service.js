@@ -5,7 +5,7 @@ const ProductService = {
     getMany: async () => {
 
         try {
-            const req = await fetch(`http://localhost:3030/produtos`);
+            const req = await fetch(`http://localhost:3030/`);
             const product = await req.json();
             return product;
         }
@@ -16,7 +16,7 @@ const ProductService = {
     getById: async (idProduct) => {
 
         try {
-            const req = await fetch(`http://localhost:3030/produtos/${idProduct}`);
+            const req = await fetch(`https://fakestoreapi.com/products/${idProduct}`);
             const currentProduct = await req.json();
             return currentProduct;
         }
@@ -27,7 +27,7 @@ const ProductService = {
     getByCategory: async (categoryName) => {
 
         try {
-            const req = await fetch(`http://localhost:3030/produtos/category/${categoryName}`);
+            const req = await fetch(`https://fakestoreapi.com/products/category/${categoryName}`);
             const productsFound = await req.json();
             return productsFound;
         }
