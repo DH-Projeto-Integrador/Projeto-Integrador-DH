@@ -10,7 +10,7 @@ export function App() {
     <>
       <CardProvider>
         <Header />
-        <Outlet />
+          <Outlet />
         <Footer />
       </CardProvider>
     </>
