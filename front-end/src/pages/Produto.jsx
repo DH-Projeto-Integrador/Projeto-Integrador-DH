@@ -1,11 +1,10 @@
 import { useState, useCallback } from "react";
 import { Link } from "react-router-dom";
-import { Header } from "../components/Header"
-import { Footer } from "../components/Footer"
 
 export function Produto() {
     return (
         <>
+            <h1>Detalhes do produto</h1>
             <main className="container m-auto text-center font-medium my-2 max-w-2xl border shadow-md rounded-xl">
                 <section className="flex-wrap ">
                     <div className="w-60 my-2 mx-3">
