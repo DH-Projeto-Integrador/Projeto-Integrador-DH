@@ -41,6 +41,10 @@ module.exports = {
         type: Sequelize.DECIMAL(10, 2),
         allowNull: false,
       },
+      type_unit: {
+        type: Sequelize.STRING,
+        allowNull: false,
+      },
       quantity_stock: {
         type: Sequelize.STRING,
         allowNull: false,

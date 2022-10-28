@@ -8,6 +8,7 @@ class Produtos extends Model {
         image_product: DataTypes.STRING,
         name: DataTypes.STRING,
         price: DataTypes.INTEGER,
+        type_unit: DataTypes.STRING,    
         quantity_stock: DataTypes.INTEGER,
         description: DataTypes.STRING(1000),
       },

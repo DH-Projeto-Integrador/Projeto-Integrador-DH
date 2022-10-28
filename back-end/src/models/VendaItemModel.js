@@ -6,6 +6,7 @@ class VendaItem extends Model {
     super.init(
       {
         qty_products: DataTypes.DATE,
+        type_unit: DataTypes.STRING,
         price_sold: DataTypes.DECIMAL,
       },
       {
