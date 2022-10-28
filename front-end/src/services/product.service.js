@@ -16,7 +16,7 @@ const ProductService = {
     getById: async (idProduct) => {
 
         try {
-            const req = await fetch(`https://fakestoreapi.com/products/${idProduct}`);
+            const req = await fetch(`http://localhost:3030/${idProduct}`);
             const currentProduct = await req.json();
             return currentProduct;
         }
