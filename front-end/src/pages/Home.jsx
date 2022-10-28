@@ -51,20 +51,12 @@ export function Home() {
         </h2>
 
         <div
-          className="w-full grid gap-2"
+          className="w-full grid gap-5"
           style={{
             gridTemplateColumns: "repeat(auto-fill, minmax(14.5rem, 1fr))",
           }}
         >
           {products.map(currentProduct => <Card key={currentProduct.id} product={currentProduct} /> )}
-          {/* <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card /> */}
         </div>
       </main>
     </>

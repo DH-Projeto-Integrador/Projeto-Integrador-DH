@@ -1,25 +1,37 @@
-import { useState, useCallback } from "react";
+import { useState, useEffect } from "react";
+
 import { Link } from "react-router-dom";
 
+import { useParams } from "react-router-dom";
+
+import ProductService from "../services/product.service";
+
 export function Produto() {
+
+    const { idProduct } = useParams();
+
+    const [ currentProduct, setCurrentProduct ] = useState();
+
+    useEffect(() => {
+
+        ProductService.getById(idProduct)
+            .then(response => setCurrentProduct(response));
+    },[] )
+    
     return (
         <>
-            <h1>Detalhes do produto</h1>
+            <h1>{currentProduct?.name}</h1>
+
             <main className="container m-auto text-center font-medium my-2 max-w-2xl border shadow-md rounded-xl">
                 <section className="flex-wrap ">
                     <div className="w-60 my-2 mx-3">
-                        <p><a href="" className="hover:underline">Home </a>&gt; <a href="" className="hover:underline">Frutas </a>&gt; Maçã</p>
+                                          
                     </div>
                     <div>
                         <img className="h-auto w-1/2 m-auto" src="https://media.gettyimages.com/photos/red-apple-picture-id184276818?k=20&m=184276818&s=612x612&w=0&h=QxOcueqAUVTdiJ7DVoCu-BkNCIuwliPEgtAQhgvBA_g=" alt="maçã" />
                     </div>
-                    <button class="w-3/4 bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-2 rounded focus:outline-none focus:shadow-outline m-5"
-                    type="button"
-                    >
-                        Adicionar ao carrinho
-                    </button>
                         <div className="m-auto w-3/4 flex flex-wrap justify-between">
-                            <div className="text-left w-28 mb-2">
+                            <div className="text-left w-28">
                                 <p>Maçã 500g</p>
                                 <p><strong>R$ 2,99</strong></p>
                                 <label htmlFor="quantidade">qtd : </label>
@@ -44,6 +56,11 @@ export function Produto() {
                                 </button>
                             </form>
                         </div>
+                            <button class="w-3/4 bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-2 rounded focus:outline-none focus:shadow-outline m-5"
+                            type="button"
+                            >
+                                Adicionar ao carrinho
+                            </button>
                     <hr className="my-2"/>
                     <div className="m-auto my-3 py-5 text-left w-3/4">
                         <h3 className="text-xl font-medium">Descrição</h3>
