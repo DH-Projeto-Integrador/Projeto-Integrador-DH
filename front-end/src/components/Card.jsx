@@ -21,19 +21,25 @@ export function Card({ product }) {
             className="w-full h-full rounded-t-lg"
             // src={url}
             src={product.image_product}
-            alt={product.description}
+            alt={product.name}
           />
         </div>
 
         <div className="p-5 row-span-2 h-max">
           <span>
-            <h5 className="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white">
+            <h5 className="text-xl font-bold tracking-tight text-gray-900 dark:text-white">
               {product.name}
+            </h5>
+          </span>
+
+          <span>
+            <h5 className="inline-block w-4/6 mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white">
+              {product.type_unit}
             </h5>
           </span>
           
           <span className="mb-3 font-normal text-gray-700 dark:text-gray-400">
-            {product.price}
+            R${product.price}
           </span>
 
       </div>
