@@ -14,8 +14,10 @@ app.use(cors());
 
 // Importação de Rotas
 const routesDb = require("./src/routers/routesDb");
+const errorHandler = require('./src/middlewares/errorHandler');
 
 // Rotas
 app.use("/", routesDb);
+app.use(errorHandler);
 
 app.listen(process.env.SERVER_PORT, console.log(`Servidor rodando`));
