@@ -2,17 +2,13 @@ import { Button } from "../components/Button";
 import { Card } from "../components/Card";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
-import ProductService from '../services/product.service'
+import ProductService from "../services/product.service";
 
 export function Home() {
-
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-
-    ProductService.getMany()
-      .then(response => setProducts(response))
-
+    ProductService.getMany().then((response) => setProducts(response));
   }, []);
 
   return (
@@ -56,7 +52,13 @@ export function Home() {
             gridTemplateColumns: "repeat(auto-fill, minmax(14.5rem, 1fr))",
           }}
         >
-          {products.map(currentProduct => <Card key={currentProduct.id} product={currentProduct} /> )}
+          {products.message ? (
+            <p className="text-red-500 font-bold">{products.message}</p>
+          ) : (
+            products.map((currentProduct) => (
+              <Card key={currentProduct.id} product={currentProduct} />
+            ))
+          )}
         </div>
       </main>
     </>
