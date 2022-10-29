@@ -5,7 +5,7 @@ const ProductService = {
     getMany: async () => {
 
         try {
-            const req = await fetch(`http://localhost:3030/`);
+            const req = await fetch(`${import.meta.env.VITE_URL}`);
             const product = await req.json();
             return product;
         }
@@ -16,7 +16,7 @@ const ProductService = {
     getById: async (idProduct) => {
 
         try {
-            const req = await fetch(`http://localhost:3030/${idProduct}`);
+            const req = await fetch(`${import.meta.env.VITE_URL}${idProduct}`);
             const currentProduct = await req.json();
             return currentProduct;
         }
