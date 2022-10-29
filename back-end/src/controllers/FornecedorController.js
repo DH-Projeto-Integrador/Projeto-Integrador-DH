@@ -2,7 +2,7 @@ const FornecedorModel = require("../models/FornecedorModel");
 
 module.exports = {
   async getAll() {
-    const [__req, res] = arguments;
+    const [, res] = arguments;
 
     const providers = await FornecedorModel.findAll();
 
@@ -28,11 +28,10 @@ module.exports = {
 
     const providerFound = await FornecedorModel.findByPk(id);
 
-    if (providerFound) {
-      res.status(200).json(providerFound);
-    } else {
-      res.status(404).json({ message: "Fornecedor não encontrado" });
+    if (!providerFound) {
+      return res.status(404).json({ message: "Fornecedor não encontrado" });
     }
+    return res.status(200).json(providerFound);
   },
   async updateById() {
     const [req, res] = arguments;
@@ -41,15 +40,15 @@ module.exports = {
 
     const providerFound = await FornecedorModel.findByPk(id);
 
-    if (providerFound) {
-      providerFound.set(req.body);
-
-      const providerUpdated = await providerFound.save();
-
-      res.status(200).json(providerUpdated);
-    } else {
-      res.status(404).json({ message: "Fornecedor não encontrada" });
+    if (!providerFound) {
+      return res.status(404).json({ message: "Fornecedor não encontrada" });
     }
+
+    providerFound.set(req.body);
+
+    const providerUpdated = await providerFound.save();
+
+    return res.status(200).json(providerUpdated);
   },
 
   async deleteById() {
@@ -59,11 +58,14 @@ module.exports = {
 
     const providerFound = await FornecedorModel.findByPk(id);
 
-    if (providerFound) {
-      providerFound.destroy();
-      res.status(200).json({ Message: `Fornecedor deletado com sucesso!` });
-    } else {
-      res.status(404).json({ message: "Categoria não encontrada" });
+    if (!providerFound) {
+      return res.status(404).json({ message: "Categoria não encontrada" });
     }
+
+    providerFound.destroy();
+
+    return res
+      .status(200)
+      .json({ Message: `Fornecedor deletado com sucesso!` });
   },
 };

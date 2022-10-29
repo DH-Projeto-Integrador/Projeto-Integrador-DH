@@ -3,13 +3,16 @@ const Categoria = require("../models/CategoriaModel");
 const Fornecedor = require("../models/FornecedorModel");
 
 module.exports = {
-  async getAll(_req, res) {
+  async getAll() {
+    const [, res] = arguments;
     const products = await Produto.findAll();
 
     return res.json(products);
   },
 
-  async store(req, res) {
+  async store() {
+    const [req, res] = arguments;
+    
     const { id_category } = req.params;
     const { id_provider, image_product, name, price, quantity_stock } =
       req.body;
@@ -35,6 +38,7 @@ module.exports = {
 
     return res.status(201).json(product);
   },
+
   async getById() {
     const [req, res] = arguments;
 
@@ -42,11 +46,11 @@ module.exports = {
 
     const productFound = await Produto.findByPk(id);
 
-    if (productFound) {
-      res.status(200).json(productFound);
-    } else {
-      res.status(404).json({ Message: "Produto não encontrado" });
+    if (!productFound) {
+      return res.status(404).json({ Message: "Produto não encontrado" });
     }
+
+    return res.status(200).json(productFound);
   },
   async updateById() {
     const [req, res] = arguments;
@@ -55,15 +59,15 @@ module.exports = {
 
     const productFound = await Produto.findByPk(id);
 
-    if (productFound) {
-      productFound.set(req.body);
-
-      const productUpdated = await productFound.save();
-
-      res.status(200).json(productUpdated);
-    } else {
-      res.status(404).json({ message: "Produto não encontrado" });
+    if (!productFound) {
+      return res.status(404).json({ message: "Produto não encontrado" });
     }
+
+    productFound.set(req.body);
+
+    const productUpdated = await productFound.save();
+
+    return res.status(200).json(productUpdated);
   },
 
   async deleteById() {
@@ -73,11 +77,12 @@ module.exports = {
 
     const productFound = await Produto.findByPk(id);
 
-    if (productFound) {
-      productFound.destroy();
-      res.status(200).json({ Message: `Produto deletado com sucesso!` });
-    } else {
-      res.status(404).json({ message: "Produto não encontrado" });
+    if (!productFound) {
+      return res.status(404).json({ message: "Produto não encontrado" });
     }
+
+    productFound.destroy();
+
+    return res.status(200).json({ Message: `Produto deletado com sucesso!` });
   },
 };
