@@ -2,69 +2,99 @@ const CategoriaModel = require("../models/CategoriaModel");
 
 module.exports = {
   async getAll() {
-    const [, res] = arguments;
 
-    const categories = await CategoriaModel.findAll();
+    const [, res, next] = arguments;
 
-    return res.json(categories);
+    try {
+
+      const categories = await CategoriaModel.findAll();
+
+      return res.json(categories);
+    } catch (error) {
+      next(error);
+    }
   },
 
   async store() {
-    const [req, res] = arguments;
 
-    const { name } = req.body;
+    const [req, res, next] = arguments;
 
-    const category = await CategoriaModel.create({ name });
+    try {
 
-    if (!category) {
-      return res.status(401).json({ Message: "Categoria não cadastrada." });
+      const { name } = req.body;
+
+      const category = await CategoriaModel.create({ name });
+
+      if (!category) {
+        return res.status(401).json({ Message: "Categoria não cadastrada." });
+      }
+
+      return res.status(201).json(category);
+    } catch (error) {
+      next(error);
     }
-
-    return res.status(201).json(category);
   },
   async getById() {
-    const [req, res] = arguments;
 
-    const { id } = req.params;
+    const [req, res, next] = arguments;
 
-    const categoryFound = await CategoriaModel.findByPk(id);
+    try {
 
-    if (!categoryFound) {
-      return res.status(404).json({ Message: "Categoria não encontrada" });
+      const { id } = req.params;
+
+      const categoryFound = await CategoriaModel.findByPk(id);
+
+      if (!categoryFound) {
+        return res.status(404).json({ Message: "Categoria não encontrada" });
+      }
+      return res.status(200).json(categoryFound);
+    } catch (error) {
+      next(error);
     }
-    return res.status(200).json(categoryFound);
   },
   async updateById() {
-    const [req, res] = arguments;
 
-    const { id } = req.params;
+    const [req, res, next] = arguments;
 
-    const categoryFound = await CategoriaModel.findByPk(id);
+    try {
 
-    if (!categoryFound) {
-      return res.status(404).json({ message: "Categoria não encontrada" });
+      const { id } = req.params;
+
+      const categoryFound = await CategoriaModel.findByPk(id);
+
+      if (!categoryFound) {
+        return res.status(404).json({ message: "Categoria não encontrada" });
+      }
+
+      categoryFound.set(req.body);
+
+      const categoryUpdated = await categoryFound.save();
+
+      return res.status(200).json(categoryUpdated);
+    } catch (error) {
+      next(error);
     }
-
-    categoryFound.set(req.body);
-
-    const categoryUpdated = await categoryFound.save();
-
-    return res.status(200).json(categoryUpdated);
   },
 
   async deleteById() {
-    const [req, res] = arguments;
 
-    const { id } = req.params;
+    const [req, res, next] = arguments;
+    
+    try {
 
-    const categoryFound = await CategoriaModel.findByPk(id);
+      const { id } = req.params;
 
-    if (!categoryFound) {
-      res.status(404).json({ message: "Categoria não encontrada" });
+      const categoryFound = await CategoriaModel.findByPk(id);
+
+      if (!categoryFound) {
+        res.status(404).json({ message: "Categoria não encontrada" });
+      }
+
+      categoryFound.destroy();
+
+      res.status(200).json({ Message: `Categoria deletada com sucesso!` });
+    } catch (error) {
+      next(error);
     }
-
-    categoryFound.destroy();
-
-    res.status(200).json({ Message: `Categoria deletada com sucesso!` });
   },
 };

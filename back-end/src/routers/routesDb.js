@@ -44,7 +44,7 @@ routes.get("/usuario/:id", UsuarioController.getById);
 routes.patch("/usuario/:id", UsuarioController.updateById);
 routes.delete("/usuario/:id", UsuarioController.deleteById);
 
-//Rotas da tabela de Usuario
+//Rotas da tabela de Venda
 routes.get("/venda", VendaController.getAll);
 routes.post("/venda", VendaController.store);
 routes.get("/venda/:id", VendaController.getById);
