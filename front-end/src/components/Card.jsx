@@ -1,38 +1,39 @@
 import { Link } from "react-router-dom";
+import { Button } from './Button'
 
 export function Card({ product }) {
+  console.log(product)
+
   return (
-
-    <Link
-      to={`/${product.id}`}
-      className="grid grid-rows-6 w-full max-w-[20rem] h-72 bg-white rounded-lg border border-gray-200 shadow-md"
+    <div
+      className="flex flex-col gap-1 w-full max-w-[20rem] h-max bg-white rounded-lg border border-gray-200 shadow-md"
     >
-      <div className="row-span-4">
-        <img
-          className="w-full h-full rounded-t-lg"
-          // src={url}
-          src={product.image_product}
-          alt={product.name}
-        />
+      <div className="h-48">
+        <Link
+          to={product.id}
+        >
+          <img className="w-full h-full" src={product.image_product} alt={product.name} />
+        </Link>
       </div>
 
-      <div className="p-5 row-span-2 h-max">
-        <span>
-          <h5 className="text-xl font-bold tracking-tight text-gray-900 dark:text-white">
-            {product.name}
-          </h5>
-        </span>
-
-        <div className="flex justify-between">
-          <span className="text-gray-900 dark:text-gray-400">
-            R${product.price}
-          </span>
-
-          <span className="text-gray-900 dark:text-white">
-            {product.type_unit}
-          </span>
+      <div className="flex flex-col gap-2 p-4">
+        <div>
+          <Link to={product.id}>
+            <h5 className="text-lg font-medium tracking-wide">{product.name}</h5>
+          </Link>
         </div>
+
+        <div className="flex items-center justify-between">
+          <span>{product.price}</span>
+          <span>{product.type_unit}</span>
+        </div>
+
+        <Button>
+          <span>
+            adicionar o carrinho
+          </span>
+        </Button>
       </div>
-    </Link>
+    </div>
   );
 }
