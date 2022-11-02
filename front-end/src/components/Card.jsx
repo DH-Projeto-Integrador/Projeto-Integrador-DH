@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 
 export function Card({ product }) {
   return (
+
     <Link
       to={`/${product.id}`}
       className="grid grid-rows-6 w-full max-w-[20rem] h-72 bg-white rounded-lg border border-gray-200 shadow-md"

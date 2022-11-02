@@ -24,7 +24,7 @@ export function Home() {
       <div className="my-6 flex gap-2 flex-wrap container mx-auto px-4">
         <Button>
           <Link className="text-white font-semibold tracking-wide">
-            Legumes
+            Frutas
           </Link>
         </Button>
 
@@ -36,7 +36,7 @@ export function Home() {
 
         <Button>
           <Link className="text-white font-semibold tracking-wide">
-            Legumes
+            Hotaliças
           </Link>
         </Button>
       </div>
@@ -47,9 +47,9 @@ export function Home() {
         </h2>
 
         <div
-          className="w-full grid gap-5"
+          className="w-full grid gap-4 justify-between"
           style={{
-            gridTemplateColumns: "repeat(auto-fill, minmax(14.5rem, 1fr))",
+            gridTemplateColumns: "repeat(auto-fill, minmax(13.5rem, 1fr))",
           }}
         >
           {products.message ? (
