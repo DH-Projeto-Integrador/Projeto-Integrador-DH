@@ -22,7 +22,7 @@ export function Produto() {
         <section className="flex-wrap ">
           <div className="w-60 my-2 mx-3">
             <Link to="/">
-              <IoIosArrowDropleft className="fill-green-600 text-3xl cursor-pointer" />
+              <IoIosArrowDropleft className="fill-green-600 text-4xl cursor-pointer" />
             </Link>
           </div>
           <div>
@@ -42,7 +42,7 @@ export function Produto() {
               </p>
               <label htmlFor="quantidade">qtd : </label>
               <input
-                className="shadow appearance-none border rounded w-16 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline my-4"
+                className="shadow appearance-none border rounded w-16 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mt-4"
                 name="quantidade"
                 type="number"
                 defaultValue={1}
@@ -66,7 +66,7 @@ export function Produto() {
             </form>
           </div>
           <button
-            className="w-3/4 bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-2 rounded focus:outline-none focus:shadow-outline m-5"
+            className="w-3/4 bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-2 rounded-full focus:outline-none focus:shadow-outline m-5"
             type="button"
           >
             Adicionar ao carrinho

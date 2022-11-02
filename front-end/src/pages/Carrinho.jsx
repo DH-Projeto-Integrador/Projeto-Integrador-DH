@@ -1,11 +1,15 @@
 import { Link } from "react-router-dom";
 import { Header } from "../components/Header";
 import { Footer } from "../components/Footer";
+import { IoIosArrowDropleft } from "react-icons/io";
 
 export function Carrinho() {
   return (
     <>
       <main className="container m-auto text-center font-medium mt-14 mb-72 max-w-2xl border shadow-md rounded-xl">
+        <Link to="/">
+          <IoIosArrowDropleft className="fill-green-600 m-3 text-4xl cursor-pointer" />
+        </Link>
         <h1 className="py-2 self-center text-xl font-bold text-zinc-700 w-full">Carrinho</h1>
         <div className="flex flex-wrap justify-center gap-3">
           <div className="flex justify-center w-64 gap-5">

@@ -7,7 +7,7 @@ const ProductService = {
       sessionStorage.setItem("products", JSON.stringify(data));
       return data;
     } catch {
-      return { message: { err: "Ops, algo deu errado" } };
+      return { message: "Ops, algo deu errado" };
     }
   },
   getById: async (idProduct) => {
