@@ -12,7 +12,7 @@ export function Card({ product }) {
         <Link
           to={product.id}
         >
-          <img className="w-full h-full" src={product.image_product} alt={product.name} />
+          <img className="rounded-t-lg w-full h-full" src={product.image_product} alt={product.name} />
         </Link>
       </div>
 
