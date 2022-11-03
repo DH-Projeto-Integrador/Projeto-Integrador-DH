@@ -23,7 +23,7 @@ export function Cadastro() {
       phone: '1'
     };
 
-    Axios.post("http://localhost:3030/usuario", newUser)
+    Axios.post( `${import.meta.env.VITE_URL}usuario`, newUser)
       .then((response) => console.log(response))
       .catch((error) => console.log(error));
   });
