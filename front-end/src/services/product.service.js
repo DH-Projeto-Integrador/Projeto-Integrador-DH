@@ -27,18 +27,7 @@ const ProductService = {
     const productFound = products.find(({ id }) => idProduct == id)
 
     return productFound
-  },
-  getByCategory: async (categoryName) => {
-    try {
-      const req = await fetch(
-        `https://fakestoreapi.com/products/category/${categoryName}`
-      );
-      const productsFound = await req.json();
-      return productsFound;
-    } catch {
-      return { message: "Ops, algo deu errado" };
-    }
-  },
+  }
 };
 
 export default ProductService;

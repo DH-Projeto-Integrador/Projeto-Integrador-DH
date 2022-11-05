@@ -2,15 +2,13 @@ import { Link } from "react-router-dom";
 import { Button } from './Button'
 
 export function Card({ product }) {
-  console.log(product)
-
   return (
     <div
       className="flex flex-col gap-1 w-full max-w-[20rem] h-max bg-white rounded-lg border border-gray-200 shadow-md"
     >
       <div className="h-48">
         <Link
-          to={product.id}
+          to={`/${product.id}`}
         >
           <img className="rounded-t-lg w-full h-full" src={product.image_product} alt={product.name} />
         </Link>
