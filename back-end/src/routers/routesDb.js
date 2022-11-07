@@ -1,13 +1,27 @@
 const express = require("express");
 const routes = express.Router();
 
+//Importação dos middlewares
+const { Authorize } = require("../middlewares/Authentication")
+
 //Importação dos controllers
+const { ValidationUser } = require("../controllers/AuthController")
 const CategoriaController = require("../controllers/CategoriaController");
 const FornecedorController = require("../controllers/FornecedorController");
 const ProdutoController = require("../controllers/ProdutoController");
 const PagamentoController = require("../controllers/PagamentoController");
 const UsuarioController = require("../controllers/UsuarioController");
 const VendaController = require("../controllers/VendaController");
+
+//Rota de autenticação
+routes.get("/auth", ValidationUser)
+
+//Rotas da tabela de Usuario
+routes.get("/usuario", UsuarioController.getAll);
+routes.post("/usuario", UsuarioController.store);
+routes.get("/usuario/:id", UsuarioController.getById);
+routes.patch("/usuario/:id", UsuarioController.updateById);
+routes.delete("/usuario/:id", UsuarioController.deleteById);
 
 //Rotas da tabela de Categorias
 routes.get("/categorias", CategoriaController.getAll);
@@ -36,13 +50,6 @@ routes.post("/pagamento", PagamentoController.store);
 routes.get("/pagamento/:id", PagamentoController.getById);
 routes.patch("/pagamento/:id", PagamentoController.updateById);
 routes.delete("/pagamento/:id", PagamentoController.deleteById);
-
-//Rotas da tabela de Usuario
-routes.get("/usuario", UsuarioController.getAll);
-routes.post("/usuario", UsuarioController.store);
-routes.get("/usuario/:id", UsuarioController.getById);
-routes.patch("/usuario/:id", UsuarioController.updateById);
-routes.delete("/usuario/:id", UsuarioController.deleteById);
 
 //Rotas da tabela de Venda
 routes.get("/venda", VendaController.getAll);
