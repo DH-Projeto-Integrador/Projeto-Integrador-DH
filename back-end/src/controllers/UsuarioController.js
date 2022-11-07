@@ -7,7 +7,6 @@ module.exports = {
     const [, res, next] = arguments;
 
     try {
-
       const users = await UsuarioModel.findAll();
 
       return res.json(users);
@@ -75,41 +74,6 @@ module.exports = {
       }
 
       return res.status(200).json(userFound);
-    } catch (error) {
-      next(error);
-    }
-  },
-
-  async getByEmail() {
-
-    const [req, res, next] = arguments;
-
-    try {
-
-      const { email, password } = req.body;
-
-      const userFound = await UsuarioModel.findOne({ where: { email } });
-
-      if (userFound && userFound.password == password) {
-        const token = jwt.sign(
-          {
-            exp: Math.floor(Date.now() / 1000) + 60 * 60,
-            data: {
-              id: userFound.id,
-              name: userFound.name,
-              lastname: userFound.lastname,
-              email: userFound.email,
-              cpf: userFound.cpf,
-              full_address: userFound.full_address,
-            },
-          },
-          process.env.SECRET_TOKEN
-        );
-
-        return res.status(200).json(token);
-      }
-
-      return res.status(404).json({ Message: "Login invalido" });
     } catch (error) {
       next(error);
     }
