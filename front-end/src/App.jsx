@@ -1,18 +1,18 @@
 import { Outlet } from "react-router-dom";
 import { Footer } from "./components/Footer";
 import { Header } from "./components/Header";
-import { CardProvider } from "./providers/card.provider";
+import { CartProvider } from "./providers/CartContext";
 
 import "./styles/global.css";
 
 export function App() {
   return (
     <>
-      <CardProvider>
+      <CartProvider>
         <Header />
           <Outlet />
         <Footer />
-      </CardProvider>
+      </CartProvider>
     </>
   );
 }
