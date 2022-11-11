@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { IoIosArrowDropleft } from "react-icons/io";
 import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
+import { Button } from '../components/Button'
 
 import ProductService from "../services/product.service";
 
@@ -65,12 +66,14 @@ export function Produto() {
               </button>
             </form>
           </div>
-          <button
-            className="w-3/4 bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-2 rounded-full focus:outline-none focus:shadow-outline m-5"
-            type="button"
-          >
-            Adicionar ao carrinho
-          </button>
+          <div className="w-3/4 m-auto">
+            <Button
+              onClick={() => {addItemsOnShoppingCart()}}>
+              <span>
+                Adicionar ao carrinho
+              </span>
+            </Button>
+          </div>
           <hr className="my-2" />
           <div className="m-auto my-3 py-5 text-left w-3/4">
             <h3 className="text-xl font-medium">Descrição</h3>

@@ -1,3 +1,4 @@
+import { Button } from "../components/Button";
 import { Card } from "../components/Card";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
@@ -10,10 +11,12 @@ export function Home() {
     ProductService.getMany().then((response) => setProducts(response));
   }, []);
 
-  function filterProducts(idCategory){
+  function filterProducts(idCategory) {
     const sessionProducts = JSON.parse(sessionStorage.getItem("products"));
-    if(idCategory){
-      const results = sessionProducts.filter(product => product.id_category == idCategory);
+    if (idCategory) {
+      const results = sessionProducts.filter(
+        (product) => product.id_category == idCategory
+      );
       setProducts(results);
     } else {
       setProducts(sessionProducts);
@@ -31,31 +34,53 @@ export function Home() {
       </aside>
 
       <div className="my-6 flex justify-center gap-2 flex-wrap container mx-auto px-4">
+        <div className="w-32">
+          <Button
+            onClick={() => {
+              filterProducts();
+            }}
+          >
+            <Link className="text-white font-semibold tracking-wide">
+              Todos
+            </Link>
+          </Button>
+        </div>
 
-      <button className="rounded-full w-28 py-2 px-4 bg-red-500 text-center hover:bg-red-700 text-white" onClick={() => {filterProducts()}}>
-          <Link className="text-white font-semibold tracking-wide">
-            Todos
-          </Link>
-        </button>
+        <div className="w-32">
+          <Button
+            onClick={() => {
+              filterProducts(1);
+            }}
+          >
+            <Link className="text-white font-semibold tracking-wide">
+              Frutas
+            </Link>
+          </Button>
+        </div>
 
-        <button className="rounded-full w-28 py-2 px-4 bg-red-500 text-center hover:bg-red-700 text-white" onClick={() => {filterProducts(1)}}>
-          <Link className="text-white font-semibold tracking-wide">
-            Frutas
-          </Link>
-        </button>
+        <div className="w-32">
+          <Button
+            onClick={() => {
+              filterProducts(2);
+            }}
+          >
+            <Link className="text-white font-semibold tracking-wide">
+              Verduras
+            </Link>
+          </Button>
+        </div>
 
-        <button className="rounded-full w-28 py-2 px-4 bg-red-500 text-center hover:bg-red-700 text-white" onClick={() => {filterProducts(2)}}>
-          <Link className="text-white font-semibold tracking-wide">
-            Verduras
-          </Link>
-        </button>
-
-        <button className="rounded-full w-28 py-2 px-4 bg-red-500 text-center hover:bg-red-700 text-white" onClick={() => {filterProducts(3)}}>
-          <Link className="text-white font-semibold tracking-wide">
-            Hotaliças
-          </Link>
-        </button>
-
+        <div className="w-32">
+          <Button
+            onClick={() => {
+              filterProducts(3);
+            }}
+          >
+            <Link className="text-white font-semibold tracking-wide">
+              Hotaliças
+            </Link>
+          </Button>
+        </div>
       </div>
 
       <main className="container mx-auto mb-6 px-5">
