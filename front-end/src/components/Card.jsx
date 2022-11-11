@@ -1,7 +1,25 @@
+import { useCart } from "../providers/CartContext";
 import { Link } from "react-router-dom";
 import { Button } from './Button'
 
 export function Card({ product }) {
+  const cart = useCart()
+  let localArray = [];
+  const add = (product) => () => {
+    cart.addToCart(product)
+    if(localStorage.products) {
+      localArray = JSON.parse(localStorage.getItem('products'))
+    }
+
+    const productFound = localArray.find((item) => item.id === product.id)
+
+    if(!productFound) {
+      localArray.push(product)
+      localStorage.products = JSON.stringify(localArray);
+      console.log(localArray)
+    }
+  }
+
   return (
     <div
       className="flex flex-col gap-1 w-full max-w-[20rem] h-max bg-white rounded-lg border border-gray-200 shadow-md"
@@ -22,15 +40,19 @@ export function Card({ product }) {
         </div>
 
         <div className="flex items-center justify-between">
-          <span>{product.price}</span>
+          <span>R$ {product.price}</span>
           <span>{product.type_unit}</span>
         </div>
 
-        <Button>
-          <span>
-            adicionar o carrinho
-          </span>
-        </Button>
+        <div className="w-52 self-center">
+          <Button
+          onClick={add(product)}
+          >
+            <span>
+              adicionar o carrinho
+            </span>
+          </Button>
+        </div>
       </div>
     </div>
   );
