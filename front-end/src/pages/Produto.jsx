@@ -3,13 +3,29 @@ import { IoIosArrowDropleft } from "react-icons/io";
 import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import { Button } from '../components/Button'
+import { useCart } from "../providers/CartContext"
 
 import ProductService from "../services/product.service";
 
 export function Produto() {
+  const cart = useCart()
+  let localArray = [];
   const { idProduct } = useParams();
-
   const [currentProduct, setCurrentProduct] = useState();
+
+  const add = (currentProduct) => () => {
+    cart.addToCart(currentProduct)
+    if(localStorage.products) {
+      localArray = JSON.parse(localStorage.getItem('products'))
+    }
+
+    const productFound = localArray.find((item) => item.id === currentProduct.id)
+
+    if(!productFound) {
+      localArray.push(currentProduct)
+      localStorage.products = JSON.stringify(localArray);
+    }
+  }
 
   useEffect(() => {
     ProductService.getById(idProduct).then((response) =>
@@ -68,7 +84,7 @@ export function Produto() {
           </div>
           <div className="w-3/4 m-auto">
             <Button
-              onClick={() => {addItemsOnShoppingCart()}}>
+              onClick={add(currentProduct)}>
               <span>
                 Adicionar ao carrinho
               </span>

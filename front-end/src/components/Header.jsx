@@ -5,7 +5,9 @@ import { useCart } from "../providers/CartContext"
 
 export const Header = () => {
   const cart = useCart()
-  const itemsCount = Object.keys(cart.cart).length;
+  const localArray = JSON.parse(localStorage.getItem('products'))
+ 
+  const itemsCount = !localArray ? 0 : JSON.parse(localStorage.getItem('products')).length
 
   return (
     <header className="sticky top-0 w-full bg-green-500">
