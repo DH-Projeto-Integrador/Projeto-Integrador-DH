@@ -1,5 +1,3 @@
-import { useCallback } from "react";
-import { useEffect } from "react";
 import { createContext, useState } from "react";
 
 export const CartContext = createContext();
@@ -21,11 +19,33 @@ export const CartProvider = ({ children }) => {
         setProductsInCard(copyProductsInCard)
     }
 
-    function removeProductToCart() { }
+    function removeProductToCart(id) {
+        const copyProductsInCard = [...productsInCard]
 
-    function deleteProductToCart() { }
+        const item = copyProductsInCard.find(({ id }) => id == product.id)
 
-    function fullClearCart() {}
+        if (item) {
+            item.quantidade -= 1
+        }
+
+        if (item && item.quantidade === 0) {
+            copyProductsInCard = copyProductsInCard.filter((products) => products.id !== id)
+        }
+
+        setProductsInCard(copyProductsInCard)
+    }
+
+    function deleteProductToCart(id) {
+        const copyProductsInCard = [...productsInCard]
+
+        copyProductsInCard = copyProductsInCard.filter((products) => products.id !== id)
+
+        setProductsInCard(copyProductsInCard)
+    }
+
+    function fullClearCart() {
+        setProductsInCard([])
+    }
 
     return (
         <CartContext.Provider value={{ productsInCard, addProductToCart, removeProductToCart, deleteProductToCart, fullClearCart }}>
