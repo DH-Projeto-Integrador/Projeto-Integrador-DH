@@ -49,7 +49,7 @@ export function ProductCart({ products }) {
         <div className="w-28 text-base font-bold text-zinc-700">
           <h4>Preço</h4>
 
-          <span>R${products.price}</span>
+          <span>R${(products.price * products.quantidade).toFixed(2)}</span>
         </div>
       </div>
     </div>

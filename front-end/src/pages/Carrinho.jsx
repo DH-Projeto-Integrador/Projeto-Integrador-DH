@@ -7,8 +7,8 @@ import { CartContext } from "../providers/CartContext";
 
 export function Carrinho() {
   const { productsInCard, setProductsInCard } = useContext(CartContext)
-
   const copyProductsInCard = [...productsInCard]
+  const frete = 5
 
   const totalPrice = copyProductsInCard.reduce(
     (previousValue, currentValue) => (
@@ -42,13 +42,9 @@ export function Carrinho() {
                   </div>
 
                   <div className="flex flex-col w-24 text-left">
-                    <p>R$5</p>
-                    <p>R${totalPrice}</p>
+                    <p>R${frete.toFixed(2)}</p>
+                    <p>R${totalPrice.toFixed(2)}</p>
                   </div>
-                </div>
-
-                <div className="py-3">
-                  <hr />
                 </div>
 
                 <div className="flex justify-center py-8 px-4 gap-4">
