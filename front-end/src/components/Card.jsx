@@ -1,23 +1,10 @@
-import { useCart } from "../providers/CartContext";
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { CartContext } from "../providers/CartContext";
 import { Button } from './Button'
 
 export function Card({ product }) {
-  const cart = useCart()
-  let localArray = [];
-  const add = (product) => () => {
-    cart.addToCart(product)
-    if(localStorage.products) {
-      localArray = JSON.parse(localStorage.getItem('products'))
-    }
-
-    const productFound = localArray.find((item) => item.id === product.id)
-
-    if(!productFound) {
-      localArray.push(product)
-      localStorage.products = JSON.stringify(localArray);
-    }
-  }
+  const { addProductToCart } = useContext(CartContext)
 
   return (
     <div
@@ -45,7 +32,7 @@ export function Card({ product }) {
 
         <div className="w-52 self-center">
           <Button
-          onClick={add(product)}
+          onClick={() => addProductToCart(product)}
           >
             <span>
               adicionar o carrinho
