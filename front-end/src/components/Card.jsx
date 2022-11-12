@@ -16,7 +16,6 @@ export function Card({ product }) {
     if(!productFound) {
       localArray.push(product)
       localStorage.products = JSON.stringify(localArray);
-      console.log(localArray)
     }
   }
 
