@@ -22,7 +22,7 @@ export const CartProvider = ({ children }) => {
     function removeProductToCart(id) {
         const copyProductsInCard = [...productsInCard]
 
-        const item = copyProductsInCard.find(({ id }) => id == product.id)
+        const item = copyProductsInCard.find((product) => id == product.id)
 
         if (item) {
             item.quantidade -= 1
@@ -38,17 +38,13 @@ export const CartProvider = ({ children }) => {
     function deleteProductToCart(id) {
         const copyProductsInCard = [...productsInCard]
 
-        copyProductsInCard = copyProductsInCard.filter((products) => products.id !== id)
+        const restProducts = copyProductsInCard.filter((products) => products.id !== id)
 
-        setProductsInCard(copyProductsInCard)
-    }
-
-    function fullClearCart() {
-        setProductsInCard([])
+        setProductsInCard([...restProducts])
     }
 
     return (
-        <CartContext.Provider value={{ productsInCard, addProductToCart, removeProductToCart, deleteProductToCart, fullClearCart }}>
+        <CartContext.Provider value={{ productsInCard, setProductsInCard, addProductToCart, removeProductToCart, deleteProductToCart }}>
             {children}
         </CartContext.Provider>
     )
