@@ -1,13 +1,13 @@
+import { useEffect } from "react";
+import { useState } from "react";
+import { useContext } from "react";
 import { BiSearch, BiUserCircle, BiCart } from "react-icons/bi"
 import { Link } from "react-router-dom"
-import { useCart } from "../providers/CartContext"
+import { CartContext } from "../providers/CartContext";
 
 
 export const Header = () => {
-  const cart = useCart()
-  const localArray = JSON.parse(localStorage.getItem('products'))
- 
-  const itemsCount = !localArray ? 0 : JSON.parse(localStorage.getItem('products')).length
+  const { productsInCard } = useContext(CartContext)
 
   return (
     <header className="sticky top-0 w-full bg-green-500">
@@ -25,7 +25,7 @@ export const Header = () => {
 
             <div className="flex gap-2 bg-green-600 px-4 py-1 rounded-full">
               <div className="relative w-10">
-                <Link to="/carrinho" content={itemsCount} className="after:bg-red-500 after:opacity-90 after:border-2 after:rounded-full after:border-none after:w-6 after:absolute after:-top-2 after:-right-1 after:content-[attr(content)] after:flex after:items-center after:justify-center after:text-white">
+                <Link to="/carrinho" content={productsInCard.length} className="after:bg-red-500 after:opacity-90 after:border-2 after:rounded-full after:border-none after:w-6 after:absolute after:-top-2 after:-right-1 after:content-[attr(content)] after:flex after:items-center after:justify-center after:text-white">
                   <BiCart
                     className="fill-white text-3xl cursor-pointer"
                   />

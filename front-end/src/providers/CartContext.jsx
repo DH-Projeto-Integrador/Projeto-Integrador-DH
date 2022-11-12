@@ -1,25 +1,35 @@
-import { createContext, useState, useContext } from "react";
+import { useCallback } from "react";
+import { useEffect } from "react";
+import { createContext, useState } from "react";
 
 export const CartContext = createContext();
 
-export const CartProvider = ({  children }) => {
-    const [cart, setCart] = useState([]);
-    const addToCart = (product) => {
-      setCart((old) => ({
-        ...old,
-        [product.id]: product,
-      }))
+export const CartProvider = ({ children }) => {
+    const [productsInCard, setProductsInCard] = useState([]);
+
+    function addProductToCart(product) {
+        const copyProductsInCard = [...productsInCard]
+
+        const item = copyProductsInCard.find(({ id }) => id == product.id)
+
+        if (!item) {
+            copyProductsInCard.push({ ...product, quantidade: 1 })
+        } else {
+            item.quantidade += 1
+        }
+
+        setProductsInCard(copyProductsInCard)
     }
-    const [totalPrice, setTotalPrice] = useState()
+
+    function removeProductToCart() { }
+
+    function deleteProductToCart() { }
+
+    function fullClearCart() {}
 
     return (
-        <CartContext.Provider value={{cart, addToCart, totalPrice, setTotalPrice}}>
+        <CartContext.Provider value={{ productsInCard, addProductToCart, removeProductToCart, deleteProductToCart, fullClearCart }}>
             {children}
         </CartContext.Provider>
     )
-}
-
-export const useCart = () => {
-  const cart = useContext(CartContext)
-  return cart;
 }

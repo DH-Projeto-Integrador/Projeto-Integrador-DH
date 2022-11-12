@@ -3,12 +3,10 @@ import { IoIosArrowDropleft } from "react-icons/io";
 import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import { Button } from '../components/Button'
-import { useCart } from "../providers/CartContext"
 
 import ProductService from "../services/product.service";
 
 export function Produto() {
-  const cart = useCart()
   let localArray = [];
   const { idProduct } = useParams();
   const [currentProduct, setCurrentProduct] = useState();
