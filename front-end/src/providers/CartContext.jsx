@@ -1,9 +1,15 @@
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 
 export const CartContext = createContext();
 
 export const CartProvider = ({ children }) => {
     const [productsInCard, setProductsInCard] = useState([]);
+
+    useEffect(() => {
+        const transformeParseLocalStorage = JSON.parse(localStorage.getItem("products"))
+        const setContext = !localStorage.getItem("products") ? [] : transformeParseLocalStorage
+        setProductsInCard(setContext)
+    }, [])
 
     function addProductToCart(product) {
         const copyProductsInCard = [...productsInCard]
@@ -16,6 +22,7 @@ export const CartProvider = ({ children }) => {
             item.quantidade += 1
         }
 
+        localStorage.setItem("products", JSON.stringify(copyProductsInCard))
         setProductsInCard(copyProductsInCard)
     }
 
