@@ -14,7 +14,7 @@ const UsuarioController = require("../controllers/UsuarioController");
 const VendaController = require("../controllers/VendaController");
 
 //Rota de autenticação
-routes.get("/auth", ValidationUser)
+routes.post("/auth", ValidationUser)
 
 //Rotas da tabela de Usuario
 routes.get("/usuario", UsuarioController.getAll);

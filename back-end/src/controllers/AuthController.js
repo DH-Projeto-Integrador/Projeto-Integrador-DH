@@ -35,7 +35,8 @@ module.exports = {
             email,
             phone,
             full_address,
-          }
+          },
+          process.env.SECRET_TOKEN
         )
       });
   }

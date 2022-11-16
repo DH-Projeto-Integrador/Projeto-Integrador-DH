@@ -31,7 +31,9 @@ export const Header = () => {
               </div>
 
               <div>
-                <BiUserCircle className="fill-white text-3xl cursor-pointer" />
+                <a href="perfilusuario">
+                  <BiUserCircle className="fill-white text-3xl cursor-pointer" />
+                </a>
               </div>
             </div>
           </div>
