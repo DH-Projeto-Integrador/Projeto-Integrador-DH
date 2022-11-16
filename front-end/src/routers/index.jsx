@@ -8,7 +8,7 @@ import { Carrinho } from "../pages/Carrinho";
 import { Login } from "../pages/Login";
 import { RecuperarSenha } from "../pages/RecuperarSenha";
 import { Sobre } from "../pages/sobre";
-
+import { PerfilUsuario } from "../pages/PerfilUsuario";
 
 const Routers = [
   {
@@ -25,6 +25,10 @@ const Routers = [
       {
         path: "carrinho",
         element: <Carrinho />,
+      },
+      {
+        path: "perfilusuario",
+        element: <PerfilUsuario />,
       },
       {
         path: "recuperarsenha",
