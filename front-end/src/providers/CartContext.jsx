@@ -27,7 +27,7 @@ export const CartProvider = ({ children }) => {
     }
 
     function removeProductToCart(id) {
-        const copyProductsInCard = [...productsInCard]
+        let copyProductsInCard = [...productsInCard]
 
         const item = copyProductsInCard.find((product) => id == product.id)
 

@@ -49,7 +49,7 @@ export function Carrinho() {
 
                 <div className="flex justify-center py-8 px-4 gap-4">
                   <button
-                    onClick={() => setProductsInCard([])}
+                    onClick={() => {setProductsInCard([]); localStorage.removeItem("products")}}
                     className="w-48 border text-gray-500 border-gray-400 hover:bg-gray-500 hover:text-white font-bold py-2 px-2 rounded focus:outline-none focus:shadow-outline">Limpar Carrinho</button>
                   <button className="w-48 border text-red-500 border-red-500 hover:bg-red-500 hover:text-white font-bold py-2 px-2 rounded focus:outline-none focus:shadow-outline">Finalizar Compra</button>
                 </div>

@@ -1,6 +1,6 @@
 import Axios from 'axios';
 import { useCallback, useRef } from "react";
-import { Link } from "react-router-dom";
+import { Link, redirect } from "react-router-dom";
 
 export function Cadastro() {
   const firstNameRef = useRef();
@@ -20,11 +20,14 @@ export function Cadastro() {
       full_address: addressRef.current.value,
       email: emailRef.current.value,
       password: passwordRef.current.value,
-      phone: '1'
+      phone: 123456789
     };
 
-    Axios.post("http://localhost:3030/usuario", newUser)
-      .then((response) => console.log(response))
+    Axios.post("http://localhost:3333/usuario", newUser)
+      .then((response) => {
+        localStorage.setItem("token", response.data)
+        // redirect('/perfil')
+      })
       .catch((error) => console.log(error));
   });
 
@@ -48,7 +51,7 @@ export function Cadastro() {
           >
             <input
               ref={firstNameRef}
-              name="first name"
+              name="firstname"
               type="text"
               placeholder="first name"
               required

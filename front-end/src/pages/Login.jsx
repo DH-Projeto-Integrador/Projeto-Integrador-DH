@@ -1,6 +1,28 @@
 import { Link } from "react-router-dom";
+import Axios from 'axios'
+import { useCallback, useRef } from "react";
 
 export function Login() {
+  const emailRef = useRef()
+  const passwordRef = useRef()
+
+  const handleSubmit = useCallback((event) => {
+    event.preventDefault();
+
+    const login = {
+      email: emailRef.current.value,
+      password: passwordRef.current.value
+    }
+
+    Axios.post("http://localhost:3333/auth", login)
+      .then((response) => {
+        console.log(response)
+        localStorage.setItem("token", response.data)
+      })
+      .catch((error) => console.log(error)
+      );
+  });
+
   return (
     <div className="flex justify-center items-center h-screen px-4 md:px-0 container m-auto">
       <div className="w-full sm:w-[31.25rem] min-h-96 bg-white border shadow-md rounded-xl flex flex-col justify-center items-center">
@@ -15,8 +37,9 @@ export function Login() {
             </span>
           </div>
 
-          <form className="px-8 pt-6 pb-8 mb-2 flex flex-col gap-4">
+          <form onSubmit={handleSubmit} className="px-8 pt-6 pb-8 mb-2 flex flex-col gap-4">
             <input
+              ref={emailRef}
               name="email"
               type="email"
               placeholder="example@example.com"
@@ -25,6 +48,7 @@ export function Login() {
             />
 
             <input
+              ref={passwordRef}
               name="password"
               type="password"
               placeholder="***********"
@@ -35,7 +59,7 @@ export function Login() {
             <div className="flex items-center justify-center">
               <button
                 className="w-full bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-                type="button"
+                type="submit"
               >
                 Acessar
               </button>
